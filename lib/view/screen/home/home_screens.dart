@@ -310,7 +310,7 @@ class _HomePageState extends State<HomePage> {
                                                     style: titilliumSemiBold
                                                         .copyWith(
                                                         fontSize: Dimensions
-                                                            .FONT_SIZE_EXTRA_SMALL),
+                                                            .FONT_SIZE_LARGE),
                                                   ),
                                                 ),
                                               ),
@@ -399,7 +399,7 @@ class _HomePageState extends State<HomePage> {
                                                     style: titilliumSemiBold
                                                         .copyWith(
                                                         fontSize: Dimensions
-                                                            .FONT_SIZE_EXTRA_SMALL),
+                                                            .FONT_SIZE_LARGE),
                                                   ),
                                                 ),
                                               ),
