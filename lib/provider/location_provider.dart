@@ -279,7 +279,7 @@ class LocationProvider with ChangeNotifier {
   List<String> _getAllAddressType = [];
 
   List<String> get getAllAddressType => _getAllAddressType;
-  int _selectAddressIndex = 0;
+  int _selectAddressIndex = 1;
 
   int get selectAddressIndex => _selectAddressIndex;
 

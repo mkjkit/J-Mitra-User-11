@@ -79,7 +79,7 @@ class AddressListScreen extends StatelessWidget {
                               },
                             ),
                           ),
-                          Positioned(right: 0,top: 0,
+                          /*Positioned(right: 0,top: 0,
                             child: Container(
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.only(bottomLeft: Radius.circular(5),topLeft: Radius.circular(5)),
@@ -91,7 +91,7 @@ class AddressListScreen extends StatelessWidget {
                             getTranslated('shipping_address', context):getTranslated('billing_address', context),
                                   style: robotoRegular.copyWith(fontSize: 8, color: Theme.of(context).cardColor),),
                               ),),
-                          )
+                          )*/
                         ],
                       ),
                     ),

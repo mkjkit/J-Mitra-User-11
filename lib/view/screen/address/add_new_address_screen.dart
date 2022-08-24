@@ -261,7 +261,7 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
                                   ),
 
 
-                                  Container(height: 50,
+                                  /*Container(height: 50,
                                     child: Row(children: <Widget>[
                                       Row(
                                         children: [
@@ -274,7 +274,7 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
                                               });
                                             },
                                           ),
-                                          Text(getTranslated('shipping_address', context)),
+                                          Text(getTranslated('billing_address', context)),
 
                                         ],
                                     ),
@@ -289,19 +289,19 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
                                               });
                                             },
                                           ),
-                                          Text(getTranslated('billing_address', context)),
+                                          Text(getTranslated('shipping_address', context)),
 
 
                                         ],
                                     ),
                                 ],
                               ),
-                                  ),
+                                  ),*/
 
                                   Padding(
                                     padding: const EdgeInsets.only(top: 5,),
                                     child: Text(
-                                      getTranslated('delivery_address', context),
+                                      getTranslated('address', context),
                                       style: Theme.of(context).textTheme.headline3.copyWith(color: ColorResources.getHint(context), fontSize: Dimensions.FONT_SIZE_LARGE),
                                     ),
                                   ),

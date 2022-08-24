@@ -21,7 +21,7 @@ import 'package:flutter_sixvalley_ecommerce/view/basewidget/textfield/custom_tex
 import 'package:flutter_sixvalley_ecommerce/view/screen/address/saved_address_list_screen.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/address/saved_billing_Address_list_screen.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/checkout/widget/custom_check_box.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/dashboard_screen.dart.ori';
+import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/dashboard_screen.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/payment/payment_screen.dart';
 import 'package:provider/provider.dart';
 

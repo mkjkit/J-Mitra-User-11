@@ -14,7 +14,7 @@ import 'package:flutter_sixvalley_ecommerce/view/basewidget/textfield/custom_tex
 import 'package:flutter_sixvalley_ecommerce/view/screen/auth/forget_password_screen.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/auth/widget/mobile_verify_screen.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/auth/widget/social_login_widget.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/dashboard_screen.dart.ori';
+import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/dashboard_screen.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/pre_dashboard.dart';
 import 'package:provider/provider.dart';
 

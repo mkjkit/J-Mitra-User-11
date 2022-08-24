@@ -41,14 +41,14 @@ class SettingsScreen extends StatelessWidget {
                   title: Text(getTranslated('dark_theme', context),
                       style: titilliumRegular.copyWith(fontSize: Dimensions.FONT_SIZE_LARGE)),),
 
-                TitleButton(image: Images.language,
+                /*TitleButton(image: Images.language,
                   title: getTranslated('choose_language', context),
                   onTap: () => showAnimatedDialog(context, CurrencyDialog(isCurrency: false)),),
 
                 TitleButton(image: Images.currency,
                   title: '${getTranslated('currency', context)} (${Provider.of<SplashProvider>(context).myCurrency.name})',
                   onTap: () => showAnimatedDialog(context, CurrencyDialog()),
-                ),
+                ),*/
               ],
         )),
 

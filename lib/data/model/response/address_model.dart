@@ -47,7 +47,7 @@ class AddressModel {
     country = json['country'];
     latitude = json['latitude'];
     longitude = json['longitude'];
-    isBilling = json['is_billing'];
+    //isBilling = json['is_billing'];
   }
 
   Map<String, dynamic> toJson() {
@@ -66,7 +66,7 @@ class AddressModel {
     data['country'] = this.country;
     data['latitude'] = this.latitude;
     data['longitude'] = this.longitude;
-    data['is_billing'] = this.isBilling;
+    data['is_billing'] = 1;
     return data;
   }
 }

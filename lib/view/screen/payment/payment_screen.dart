@@ -7,7 +7,7 @@ import 'package:flutter_sixvalley_ecommerce/view/basewidget/animated_custom_dial
 import 'package:flutter_sixvalley_ecommerce/view/basewidget/custom_app_bar.dart';
 import 'package:flutter_sixvalley_ecommerce/view/basewidget/custom_loader.dart';
 import 'package:flutter_sixvalley_ecommerce/view/basewidget/my_dialog.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/dashboard_screen.dart.ori';
+import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/dashboard_screen.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class PaymentScreen extends StatefulWidget {

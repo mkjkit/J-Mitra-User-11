@@ -10,7 +10,7 @@ import 'package:flutter_sixvalley_ecommerce/utill/color_resources.dart';
 import 'package:flutter_sixvalley_ecommerce/utill/images.dart';
 import 'package:flutter_sixvalley_ecommerce/view/basewidget/no_internet_screen.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/auth/auth_screen.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/dashboard_screen.dart.ori';
+import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/dashboard_screen.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/pre_dashboard.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/maintenance/maintenance_screen.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/onboarding/onboarding_screen.dart';

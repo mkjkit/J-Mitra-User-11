@@ -3,6 +3,14 @@ import 'package:flutter_sixvalley_ecommerce/data/model/response/base/api_respons
 import 'package:flutter_sixvalley_ecommerce/data/model/response/seller_model.dart';
 import 'package:flutter_sixvalley_ecommerce/data/repository/seller_repo.dart';
 import 'package:flutter_sixvalley_ecommerce/helper/api_checker.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:flutter_sixvalley_ecommerce/notification/my_notification.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'dart:io';
+import 'package:dio/dio.dart';
+import 'package:permission_handler/permission_handler.dart';
+
+
 
 class SellerProvider extends ChangeNotifier {
   final SellerRepo sellerRepo;
@@ -30,4 +38,6 @@ class SellerProvider extends ChangeNotifier {
   void removePrevOrderSeller() {
     _orderSellerList = [];
   }
+
+
 }
