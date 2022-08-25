@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.u6amtech.flutter_sixvalley_ecom"
+    package="com.jewelmitra.jewel_mitra"
     android:targetSandboxVersion="1">
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
@@ -29,7 +29,7 @@
     </queries>
 
     <application
-        android:label="Testing"
+        android:label="Jewel Mitra"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
         android:networkSecurityConfig="@xml/network_security_config"
@@ -37,7 +37,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCcr56ZxhkvdYntPYfiUmPruGo8kt4eqWk" />
+            android:value="AIzaSyCEVmctU1lNqvNfbuqioR2wm-CGi3Jj4Ic" />
 
         <activity
             android:name=".MainActivity"

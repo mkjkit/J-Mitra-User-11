@@ -26,7 +26,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   final GlobalKey<ScaffoldMessengerState> _key = GlobalKey();
   final TextEditingController _numberController = TextEditingController();
   final FocusNode _numberFocus = FocusNode();
-  String _countryDialCode = '+880';
+  String _countryDialCode = '+91';
 
   @override
   void initState() {

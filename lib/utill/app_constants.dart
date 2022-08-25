@@ -1,7 +1,7 @@
 import 'package:flutter_sixvalley_ecommerce/data/model/response/language_model.dart';
 
 class AppConstants {
-  static const String APP_NAME = 'Testing';
+  static const String APP_NAME = 'Jewel Mitra';
   static const String APP_VERSION = '11.0';
   static const String BASE_URL = 'https://dailysmart.in';
   static const String USER_ID = 'userId';

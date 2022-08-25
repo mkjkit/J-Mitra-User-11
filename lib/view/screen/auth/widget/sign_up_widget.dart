@@ -14,7 +14,7 @@ import 'package:flutter_sixvalley_ecommerce/view/basewidget/textfield/custom_pas
 import 'package:flutter_sixvalley_ecommerce/view/basewidget/textfield/custom_textfield.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/auth/widget/social_login_widget.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/dashboard_screen.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/pre_dashboard.dart';
+//import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/pre_dashboard.dart';
 import 'package:provider/provider.dart';
 
 import 'code_picker_widget.dart';
@@ -170,7 +170,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
     }
   }
 
-  String _countryDialCode = "+880";
+  String _countryDialCode = "+91";
   @override
   void initState() {
     super.initState();

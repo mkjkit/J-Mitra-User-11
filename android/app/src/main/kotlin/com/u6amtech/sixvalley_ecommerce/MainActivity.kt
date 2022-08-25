@@ -1,4 +1,4 @@
-package com.u6amtech.flutter_sixvalley_ecom
+package com.jewelmitra.jewel_mitra
 
 import io.flutter.embedding.android.FlutterActivity
 

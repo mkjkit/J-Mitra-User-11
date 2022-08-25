@@ -82,7 +82,7 @@ class OrderRepo {
     request.headers.addAll(<String,String>{'Authorization': 'Bearer $token'});
     for(int i=0; i<file.length;i++){
       if(file != null) {
-        print('bangladesh======');
+        print('india======');
         Uint8List _list = await file[i].readAsBytes();
         var part = http.MultipartFile('images[]', file[i].readAsBytes().asStream(), _list.length, filename: basename(file[i].path), contentType: MediaType('image', 'jpg'));
         request.files.add(part);

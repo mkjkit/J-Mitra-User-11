@@ -120,7 +120,7 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
                                   child: CustomButton(
                                     buttonText: getTranslated('select_location', context),
                                     onTap: () {
-                                      print('==bangladesh===');
+                                      print('==india===');
                                       if(widget.googleMapController != null) {
                                         widget.googleMapController.moveCamera(CameraUpdate.newCameraPosition(CameraPosition(target: LatLng(
                                           locationProvider.pickPosition.latitude, locationProvider.pickPosition.longitude,
