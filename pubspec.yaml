@@ -56,6 +56,7 @@ dependencies:
   fluttertoast: ^8.0.9
   file_picker: ^4.5.1
   permission_handler: ^9.2.0
+  push: ^0.1.3
   
 
 

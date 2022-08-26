@@ -31,7 +31,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
 
     _screens = [
       HomePage(),
-      singleVendor?OrderScreen(isBacButtonExist: false): InboxScreen(isBackButtonExist: false) ,
+      singleVendor?NotificationScreen(isBacButtonExist: false): InboxScreen(isBackButtonExist: false) ,
       //singleVendor? NotificationScreen(isBacButtonExist: false): OrderScreen(isBacButtonExist: false),
       singleVendor? MoreScreen(): NotificationScreen(isBacButtonExist: false),
       singleVendor?SizedBox(): MoreScreen(),
@@ -101,8 +101,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       _list.add(_barItem(Images.home_image, getTranslated('home', context), 0));
       _list.add(_barItem(Images.message_image, getTranslated('inbox', context), 1));
       //_list.add(_barItem(Images.shopping_image, getTranslated('orders', context), 2));
-      _list.add(_barItem(Images.notification, getTranslated('notification', context), 3));
-      _list.add(_barItem(Images.more_image, getTranslated('more', context), 4));
+      _list.add(_barItem(Images.notification, getTranslated('notification', context), 2));
+      _list.add(_barItem(Images.more_image, getTranslated('more', context), 3));
     }else{
       _list.add(_barItem(Images.home_image, getTranslated('home', context), 0));
       //_list.add(_barItem(Images.shopping_image, getTranslated('orders', context), 1));
