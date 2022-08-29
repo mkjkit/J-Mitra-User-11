@@ -8,6 +8,7 @@ import 'package:flutter_sixvalley_ecommerce/provider/featured_deal_provider.dart
 import 'package:flutter_sixvalley_ecommerce/provider/google_sign_in_provider.dart';
 import 'package:flutter_sixvalley_ecommerce/provider/home_category_product_provider.dart';
 import 'package:flutter_sixvalley_ecommerce/provider/location_provider.dart';
+import 'package:flutter_sixvalley_ecommerce/provider/seller_cat_provider.dart';
 import 'package:flutter_sixvalley_ecommerce/provider/top_seller_provider.dart';
 import 'package:flutter_sixvalley_ecommerce/provider/wallet_transaction_provider.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/order/order_details_screen.dart';
@@ -99,6 +100,7 @@ Future<void> main() async {
       ChangeNotifierProvider(create: (context) => di.sl<WalletTransactionProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<ReviewProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<ViewProvider>()),
+      ChangeNotifierProvider(create: (context) => di.sl<CatalogueProvider>()),
     ],
     child: MyApp(orderId: _orderID),
   ));

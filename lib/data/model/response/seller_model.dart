@@ -125,6 +125,7 @@ class Shop {
   String _address;
   String _contact;
   String _image;
+  String _catalogue;
   String _createdAt;
   String _updatedAt;
   String _banner;
@@ -136,6 +137,7 @@ class Shop {
         String address,
         String contact,
         String image,
+        String catalogue,
         String createdAt,
         String updatedAt,
         String banner}) {
@@ -157,6 +159,9 @@ class Shop {
     if (image != null) {
       this._image = image;
     }
+    if (catalogue != null) {
+      this._catalogue = catalogue;
+    }
     if (createdAt != null) {
       this._createdAt = createdAt;
     }
@@ -174,6 +179,7 @@ class Shop {
   String get address => _address;
   String get contact => _contact;
   String get image => _image;
+  String get catalogue => _catalogue;
   String get createdAt => _createdAt;
   String get updatedAt => _updatedAt;
   String get banner => _banner;
@@ -186,6 +192,7 @@ class Shop {
     _address = json['address'];
     _contact = json['contact'];
     _image = json['image'];
+    _catalogue = json['catalogue'];
     _createdAt = json['created_at'];
     _updatedAt = json['updated_at'];
     _banner = json['banner'];
@@ -199,6 +206,7 @@ class Shop {
     data['address'] = this._address;
     data['contact'] = this._contact;
     data['image'] = this._image;
+    data['catalogue'] = this._catalogue;
     data['created_at'] = this._createdAt;
     data['updated_at'] = this._updatedAt;
     data['banner'] = this._banner;

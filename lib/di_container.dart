@@ -56,6 +56,7 @@ import 'package:flutter_sixvalley_ecommerce/provider/wishlist_provider.dart';
 import 'package:flutter_sixvalley_ecommerce/utill/app_constants.dart';
 import 'package:flutter_sixvalley_ecommerce/provider/view_provider.dart';
 import 'package:flutter_sixvalley_ecommerce/provider/review_provider.dart';
+import 'package:flutter_sixvalley_ecommerce/provider/seller_cat_provider.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -126,6 +127,7 @@ Future<void> init() async {
   sl.registerFactory(() => WalletTransactionProvider(transactionRepo: sl()));
   sl.registerFactory(() => ReviewProvider(sl()));
   sl.registerFactory(() => ViewProvider(sl()));
+  sl.registerFactory(() => CatalogueProvider(sl()));
 
   // External
   final sharedPreferences = await SharedPreferences.getInstance();

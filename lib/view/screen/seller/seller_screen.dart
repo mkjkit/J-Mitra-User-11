@@ -17,6 +17,7 @@ import 'package:flutter_sixvalley_ecommerce/view/basewidget/rating_bar.dart';
 import 'package:flutter_sixvalley_ecommerce/view/basewidget/search_widget.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/chat/chat_screen.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/home/widget/products_view.dart';
+import 'package:flutter_sixvalley_ecommerce/provider/seller_cat_provider.dart';
 import 'package:provider/provider.dart';
 
 class SellerScreen extends StatefulWidget {
@@ -145,8 +146,37 @@ class _SellerScreenState extends State<SellerScreen> {
                         icon: Image.asset(Images.chat_image, color: ColorResources.SELLER_TXT, height: Dimensions.ICON_SIZE_DEFAULT),
                       ),
                     ]),
+                   ],),),
 
-                  ]),
+
+
+                   Container(
+                    color: Theme.of(context).highlightColor,
+                    padding: EdgeInsets.all(Dimensions.PADDING_SIZE_SMALL),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+
+                      Center(
+                        child: SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton(
+                              onPressed: () async {
+                                // popAddProfile();
+                                CatalogueProvider.downloadCatalogue(
+                                    widget.seller.seller.shop.catalogue, context);
+                              },
+                              child: Text(
+                                getTranslated('download_catalogue', context),
+                              )),
+                        )),
+                          SizedBox(
+                            height: 40,
+                          ),
+
+                  ],
+                    ),
                 ),
                 /*SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
                 Padding(

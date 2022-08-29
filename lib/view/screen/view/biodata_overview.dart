@@ -322,8 +322,8 @@ class _BiodataOverViewState extends State<BiodataOverView> {
                       ),
                       Center(
                           child: SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
+                          width: double.infinity,
+                          child: ElevatedButton(
                             onPressed: () async {
                               // popAddProfile();
                               viewProvider.downloadBiodata(
