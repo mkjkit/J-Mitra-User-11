@@ -18,7 +18,7 @@ class CatalogueProvider extends ChangeNotifier {
   bool _isLoading = false;
 
 
-  SellerModel _catLogues;
+  SellerModel _cataLogues;
   File _pdfcatalogue = File('');
 
 
@@ -29,9 +29,9 @@ class CatalogueProvider extends ChangeNotifier {
   bool get isLoading => _isLoading;
 
 
-  File get pdfCatLogue => _pdfcatalogue;
+  File get pdfCataLogue => _pdfcatalogue;
 
-  SellerModel get catalogues => _catLogues;
+  SellerModel get catalogues => _cataLogues;
 
   void clearCatalogue() {
     _pdfcatalogue = File('');
@@ -53,7 +53,7 @@ class CatalogueProvider extends ChangeNotifier {
           .catchError((e) => print(e.response.toString()));
 
       if (response.data != null && response.statusCode == 200) {
-        _catLogues = SellerModel.fromJson(response.data);
+        _cataLogues = SellerModel.fromJson(response.data);
       }
       _isLoading = false;
 
@@ -85,9 +85,9 @@ class CatalogueProvider extends ChangeNotifier {
         print(e);
       }
       MyNotification.showBigTextNotification(
-          'Bio-Data Downloaded', '', '', FlutterLocalNotificationsPlugin());
+          'Catalogue Downloaded', '', '', FlutterLocalNotificationsPlugin());
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('Bio-Data Downloaded')));
+          .showSnackBar(SnackBar(content: Text('Catalogue Downloaded')));
     } else {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('Unable to Downloaded')));
