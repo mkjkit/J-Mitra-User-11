@@ -52,7 +52,6 @@ class TopSellerModel {
     _contact = json['contact'];
     _image = json['image'];
     _catalogue = json ['catalogue'];
-    _catalogue = json['catalogue'];
     _createdAt = json['created_at'];
     _updatedAt = json['updated_at'];
     _banner = json['banner'];

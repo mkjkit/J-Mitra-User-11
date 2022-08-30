@@ -164,8 +164,8 @@ class _SellerScreenState extends State<SellerScreen> {
                           child: ElevatedButton(
                               onPressed: () async {
                                 // popAddProfile();
-                                CatalogueProvider.downloadCatalogue(
-                                    widget.seller.seller.shop.catalogue, context);
+                                //CatalogueProvider.downloadCatalogue(
+                                    //widget.seller.seller.shop.catalogue, context);
                               },
                               child: Text(
                                 getTranslated('download_catalogue', context),

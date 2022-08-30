@@ -18,6 +18,7 @@ import 'package:flutter_sixvalley_ecommerce/view/basewidget/rating_bar.dart';
 //import 'package:flutter_sixvalley_ecommerce/view/basewidget/search_widget.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/chat/top_seller_chat_screen.dart';
 //import 'package:flutter_sixvalley_ecommerce/view/screen/home/widget/products_view.dart';
+import 'package:flutter_sixvalley_ecommerce/provider/seller_cat_provider.dart';
 import 'package:provider/provider.dart';
 
 
@@ -157,13 +158,13 @@ class _TopSellerProductScreenState extends State<TopSellerProductScreen> {
                                                 MaterialPageRoute(
                                                     builder: (_) =>
                                                         TopSellerChatScreen(
-                                                            topSeller: widget
-                                                                .topSeller)));
+                                                            topSeller: widget.topSeller)));
                                           }
                                         },
+
                                         child: Image.asset(Images.chat_image,
-                                            height:
-                                                Dimensions.ICON_SIZE_DEFAULT),
+                                            height:Dimensions.ICON_SIZE_DEFAULT),
+
                                       ),
                                     ],
                                   ),
@@ -236,6 +237,7 @@ class _TopSellerProductScreenState extends State<TopSellerProductScreen> {
                                           ],
                                         )
                                       : SizedBox(),
+
                                 ],
                               );
                             }),
@@ -243,7 +245,90 @@ class _TopSellerProductScreenState extends State<TopSellerProductScreen> {
                         ]),
                   ]),
                 ),
+                Container(
+                  color: Theme.of(context).highlightColor,
+                  padding: EdgeInsets.all(Dimensions.PADDING_SIZE_SMALL),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
 
+                      Center(
+                          child: SizedBox(
+                            width: double.infinity,
+                            child: ElevatedButton(
+                                onPressed: () async {
+                                  // popAddProfile();
+                                  CatalogueProvider.downloadCatalogue(
+                                  widget.topSeller.catalogue, context);
+                                },
+                                child: Text(
+                                  getTranslated('download_catalogue', context),
+                                )),
+                          )),
+                      SizedBox(
+                        height: 40,
+                      ),
+
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 22.0),
+                  padding:
+                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(color: Colors.black),
+                          children: [
+                            TextSpan(
+                              text: 'Contact:- ',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            TextSpan(
+                              text: widget.topSeller.contact,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 6,
+                      ),
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(color: Colors.black),
+                          children: [
+                            TextSpan(
+                              text: 'Address:- ',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            TextSpan(
+                              text: widget.topSeller.address,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
                 /*SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
 
                 Center(

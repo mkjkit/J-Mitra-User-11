@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sixvalley_ecommerce/data/model/response/general_review_model.dart';
 import 'package:flutter_sixvalley_ecommerce/utill/color_resources.dart';
+import 'package:flutter_sixvalley_ecommerce/localization/language_constrants.dart';
+
 
 class ReviewOverview extends StatelessWidget {
   final GeneralsurveyModel review;
@@ -12,6 +14,7 @@ class ReviewOverview extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorResources.getHomeBg(context),
       appBar: AppBar(
+        title: Text(getTranslated('theft_reported_person', context)),
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context);
