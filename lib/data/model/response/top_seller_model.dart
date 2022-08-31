@@ -1,3 +1,9 @@
+import 'dart:convert';
+
+TopSellerModel topSellerModelFromJson(String str) =>
+    TopSellerModel.fromJson(json.decode(str));
+
+
 class TopSellerModel {
   int _id;
   int _sellerId;

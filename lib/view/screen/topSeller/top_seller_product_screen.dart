@@ -18,7 +18,8 @@ import 'package:flutter_sixvalley_ecommerce/view/basewidget/rating_bar.dart';
 //import 'package:flutter_sixvalley_ecommerce/view/basewidget/search_widget.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/chat/top_seller_chat_screen.dart';
 //import 'package:flutter_sixvalley_ecommerce/view/screen/home/widget/products_view.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/seller_cat_provider.dart';
+//import 'package:flutter_sixvalley_ecommerce/provider/seller_cat_provider.dart';
+import 'package:flutter_sixvalley_ecommerce/provider/catalogue_provider.dart';
 import 'package:provider/provider.dart';
 
 
@@ -267,7 +268,7 @@ class _TopSellerProductScreenState extends State<TopSellerProductScreen> {
                                 )),
                           )),
                       SizedBox(
-                        height: 40,
+                        height: 10,
                       ),
 
                     ],
