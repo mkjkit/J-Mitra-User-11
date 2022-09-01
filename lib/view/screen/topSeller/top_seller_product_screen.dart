@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_sixvalley_ecommerce/data/model/response/top_seller_model.dart';
 
@@ -25,6 +27,7 @@ import 'package:flutter_sixvalley_ecommerce/provider/pdf_api.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/topSeller/pdf_viewer_page.dart';
 import 'package:flutter_sixvalley_ecommerce/view/basewidget/button/button_widget.dart';
 import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 
 
@@ -267,9 +270,8 @@ class _TopSellerProductScreenState extends State<TopSellerProductScreen> {
                                   // popAddProfile();
                                   CatalogueProvider.downloadCatalogue(
                                   widget.topSeller.catalogue, context);
-                                  //final test = 'widget.topSeller.catalogue';
-                                  //final file = await PDFApi.loadNetwork(test);
-                                  //openPDF(context, file);
+                                  final file = await PDFApi.loadNetwork(widget.topSeller.catalogue);
+                                  openPDF(context, file);
                                 },
                                 child: Text(
                                   getTranslated('download_catalogue', context),
@@ -280,29 +282,7 @@ class _TopSellerProductScreenState extends State<TopSellerProductScreen> {
                       SizedBox(
                         height: 5,
                       ),
-                      Center(
-                          child: SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton(
-                                onPressed: () async {
-                                  // popAddProfile();
-                                  //CatalogueProvider.downloadCatalogue('https://dailysmart.in/storage/app/public/catalogue/2022-07-19-62d689d928e9e.pdf';
-                                    //  widget.topSeller.catalogue, context);
-                                  final url = http.get(Uri.parse('widget.topSeller.catalogue'));
-                                  final file = await PDFApi.loadNetwork(url);
-                                  openPDF(context, file);
-                                },
-                                child: Text(
-                                  getTranslated('view_catalogue', context),
-                                )),
-                          )
-
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-
-                    ],
+                      ],
                   ),
                 ),
                 Container(

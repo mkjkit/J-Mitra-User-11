@@ -6,6 +6,8 @@ import 'package:flutter_sixvalley_ecommerce/view/basewidget/custom_textfield.dar
 import 'package:flutter_sixvalley_ecommerce/view/basewidget/paragraph_textfield.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/view/view_large_image.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_sixvalley_ecommerce/provider/pdf_api.dart';
+import 'package:flutter_sixvalley_ecommerce/view/screen/topSeller/pdf_viewer_page.dart';
 
 class BiodataOverView extends StatefulWidget {
   final Datum biodata;
@@ -328,6 +330,8 @@ class _BiodataOverViewState extends State<BiodataOverView> {
                               // popAddProfile();
                               viewProvider.downloadBiodata(
                                   widget.biodata.biodata, context);
+                              final file = await PDFApi.loadNetwork(widget.biodata.biodata);
+                              openPDF(context, file);
                             },
                             child: Text(
                               getTranslated('download_biodata', context),
@@ -500,4 +504,7 @@ class _BiodataOverViewState extends State<BiodataOverView> {
       return Container();
     }
   }
+  static void openPDF(BuildContext context, file) => Navigator.of(context).push(
+    MaterialPageRoute(builder: (context) => PDFViewerPage(file: file)),
+  );
 }
