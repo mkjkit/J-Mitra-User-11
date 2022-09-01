@@ -58,6 +58,7 @@ dependencies:
   permission_handler: ^9.2.0
   push: ^0.1.3
   flutter_pdfview: ^1.2.2
+  advance_pdf_viewer: any
 
 
 

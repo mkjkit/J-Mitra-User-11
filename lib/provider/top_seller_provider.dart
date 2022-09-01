@@ -4,6 +4,7 @@ import 'package:flutter_sixvalley_ecommerce/data/model/response/top_seller_model
 import 'package:flutter_sixvalley_ecommerce/data/repository/top_seller_repo.dart';
 import 'package:flutter_sixvalley_ecommerce/helper/api_checker.dart';
 
+
 class TopSellerProvider extends ChangeNotifier {
   final TopSellerRepo topSellerRepo;
 

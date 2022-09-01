@@ -10,9 +10,6 @@ import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter_sixvalley_ecommerce/view/screen/topSeller/pdf_viewer_page.dart';
-
-
 
 
 class CatalogueProvider extends ChangeNotifier {
@@ -22,7 +19,7 @@ class CatalogueProvider extends ChangeNotifier {
 
 
   bool _isLoading = false;
-  Null document;
+  PDFDocument document;
 
 
   TopSellerModel _cataLogues;
@@ -61,7 +58,17 @@ class CatalogueProvider extends ChangeNotifier {
 
       if (response.data != null && response.statusCode == 200) {
         _cataLogues = TopSellerModel.fromJson(response.data);
-                      }
+        document = http.get(Uri.parse('_cataLogues')) as PDFDocument;
+        body: Center(
+          child: _isLoading
+              ? Center(child: CircularProgressIndicator())
+              : PDFViewer(
+            document: document,
+            zoomSteps: 1,
+          ),
+        );
+
+      }
       _isLoading = false;
 
       notifyListeners();
@@ -100,9 +107,4 @@ class CatalogueProvider extends ChangeNotifier {
           .showSnackBar(SnackBar(content: Text('Unable to Downloaded')));
     }
   }
-  /*static void openPDF(BuildContext context, File file) => Navigator.of(context).push(
-    MaterialPageRoute(builder: (context) => PDFViewerPage(file: file)),
-  );*/
-
-
 }

@@ -21,6 +21,11 @@ import 'package:flutter_sixvalley_ecommerce/view/screen/chat/top_seller_chat_scr
 //import 'package:flutter_sixvalley_ecommerce/provider/seller_cat_provider.dart';
 import 'package:flutter_sixvalley_ecommerce/provider/catalogue_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_sixvalley_ecommerce/provider/pdf_api.dart';
+import 'package:flutter_sixvalley_ecommerce/view/screen/topSeller/pdf_viewer_page.dart';
+import 'package:flutter_sixvalley_ecommerce/view/basewidget/button/button_widget.dart';
+import 'package:http/http.dart' as http;
+
 
 
 class TopSellerProductScreen extends StatefulWidget {
@@ -262,11 +267,37 @@ class _TopSellerProductScreenState extends State<TopSellerProductScreen> {
                                   // popAddProfile();
                                   CatalogueProvider.downloadCatalogue(
                                   widget.topSeller.catalogue, context);
+                                  //final test = 'widget.topSeller.catalogue';
+                                  //final file = await PDFApi.loadNetwork(test);
+                                  //openPDF(context, file);
                                 },
                                 child: Text(
                                   getTranslated('download_catalogue', context),
                                 )),
-                          )),
+                          )
+
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Center(
+                          child: SizedBox(
+                            width: double.infinity,
+                            child: ElevatedButton(
+                                onPressed: () async {
+                                  // popAddProfile();
+                                  //CatalogueProvider.downloadCatalogue('https://dailysmart.in/storage/app/public/catalogue/2022-07-19-62d689d928e9e.pdf';
+                                    //  widget.topSeller.catalogue, context);
+                                  final url = http.get(Uri.parse('widget.topSeller.catalogue'));
+                                  final file = await PDFApi.loadNetwork(url);
+                                  openPDF(context, file);
+                                },
+                                child: Text(
+                                  getTranslated('view_catalogue', context),
+                                )),
+                          )
+
+                      ),
                       SizedBox(
                         height: 10,
                       ),
@@ -356,4 +387,8 @@ class _TopSellerProductScreenState extends State<TopSellerProductScreen> {
       ),
     );
   }
+  static void openPDF(BuildContext context, file) => Navigator.of(context).push(
+    MaterialPageRoute(builder: (context) => PDFViewerPage(file: file)),
+  );
+  //static void openPDF(BuildContext context, file) => PDFViewerPage(file: file);
 }
