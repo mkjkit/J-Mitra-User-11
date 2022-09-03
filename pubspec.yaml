@@ -59,6 +59,7 @@ dependencies:
   push: ^0.1.3
   flutter_pdfview: ^1.2.2
   advance_pdf_viewer: any
+  open_file: ^3.2.1
 
 
 

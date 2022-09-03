@@ -6,6 +6,7 @@ import 'package:flutter_sixvalley_ecommerce/data/datasource/remote/dio/dio_clien
 import 'package:flutter_sixvalley_ecommerce/data/model/response/top_seller_model.dart';
 import 'package:flutter_sixvalley_ecommerce/notification/my_notification.dart';
 import 'package:flutter_sixvalley_ecommerce/utill/app_constants.dart';
+import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
@@ -100,9 +101,40 @@ class CatalogueProvider extends ChangeNotifier {
           .showSnackBar(SnackBar(content: Text('Unable to Downloaded')));
     }
   }
-  /*static void openPDF(BuildContext context, File file) => Navigator.of(context).push(
+  static void openPDF(BuildContext context, File file) => Navigator.of(context).push(
     MaterialPageRoute(builder: (context) => PDFViewerPage(file: file)),
-  );*/
+  );
+
+  static openFile({url}) async{
+    final response = await http.get(Uri.parse(url));
+    //final name= fileName ?? url.split('/').last;
+    final file= await CatalogueProvider.downloadFile(url);
+    if (file == null) return;
+    print('Path: ${file.path}');
+    OpenFile.open(file.path);
+
+  }
+
+   static  downloadFile(url) async {
+    final appStorage = await getApplicationDocumentsDirectory();
+    final name= url.split('/').last;
+    final file = File('${appStorage.path}/$name');
+    try {
+      final response = await Dio().get(
+          url,
+          options: Options(
+            responseType: ResponseType.bytes,
+            followRedirects: false,
+            receiveTimeout: 0,
+          )
+      );
+      final raf = file.openSync(mode: FileMode.write);
+      raf.writeFromSync(response.data);
+      await raf.close();
+      return file;
+    } catch(e){
+      return null;
+    }}
 
 
 }

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sixvalley_ecommerce/data/model/response/top_seller_model.dart';
 
@@ -22,6 +23,8 @@ import 'package:flutter_sixvalley_ecommerce/view/screen/chat/top_seller_chat_scr
 //import 'package:flutter_sixvalley_ecommerce/view/screen/home/widget/products_view.dart';
 //import 'package:flutter_sixvalley_ecommerce/provider/seller_cat_provider.dart';
 import 'package:flutter_sixvalley_ecommerce/provider/catalogue_provider.dart';
+import 'package:open_file/open_file.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_sixvalley_ecommerce/provider/pdf_api.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/topSeller/pdf_viewer_page.dart';
@@ -268,13 +271,17 @@ class _TopSellerProductScreenState extends State<TopSellerProductScreen> {
                             child: ElevatedButton(
                                 onPressed: () async {
                                   // popAddProfile();
+                                  // Downaload the file in Phone memory-------------------------------------------------->/
                                   CatalogueProvider.downloadCatalogue(
                                   widget.topSeller.catalogue, context);
                                   final file = await PDFApi.loadNetwork(widget.topSeller.catalogue);
-                                  openPDF(context, file);
+                                  CatalogueProvider.openPDF(context, file);
+                                  //Use the openFile package to open the any file ------------------------------------>/
+                                  /*CatalogueProvider.openFile(
+                                      url: widget.topSeller.catalogue);*/
                                 },
                                 child: Text(
-                                  getTranslated('download_catalogue', context),
+                                  getTranslated('view_catalogue', context),
                                 )),
                           )
 
@@ -367,8 +374,4 @@ class _TopSellerProductScreenState extends State<TopSellerProductScreen> {
       ),
     );
   }
-  static void openPDF(BuildContext context, file) => Navigator.of(context).push(
-    MaterialPageRoute(builder: (context) => PDFViewerPage(file: file)),
-  );
-  //static void openPDF(BuildContext context, file) => PDFViewerPage(file: file);
-}
+  }
