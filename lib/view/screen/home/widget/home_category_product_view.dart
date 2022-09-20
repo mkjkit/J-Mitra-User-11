@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/home_category_product_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/dimensions.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/product_widget.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/title_row.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/product/brand_and_category_product_screen.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/product/product_details_screen.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/home_category_product_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/dimensions.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/product_widget.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/title_row.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/product/brand_and_category_product_screen.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/product/product_details_screen.dart';
 import 'package:provider/provider.dart';
 
 class HomeCategoryProductView extends StatelessWidget {

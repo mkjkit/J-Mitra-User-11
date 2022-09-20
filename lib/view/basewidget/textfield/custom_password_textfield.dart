@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/custom_themes.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/custom_themes.dart';
 
 class CustomPasswordTextField extends StatefulWidget {
   final TextEditingController controller;

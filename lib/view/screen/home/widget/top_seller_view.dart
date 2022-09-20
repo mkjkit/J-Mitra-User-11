@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/category_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/splash_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/theme_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/top_seller_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/color_resources.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/dimensions.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/images.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/topSeller/top_seller_product_screen.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/category_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/splash_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/theme_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/top_seller_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/color_resources.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/dimensions.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/images.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/topSeller/top_seller_product_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 

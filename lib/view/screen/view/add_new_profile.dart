@@ -2,11 +2,11 @@ import 'dart:io';
 import 'dart:math';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/localization/language_constrants.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/view_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/color_resources.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/custom_textfield.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/paragraph_textfield.dart';
+import 'package:com.jewelmitra.jewel_mitra/localization/language_constrants.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/view_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/color_resources.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/custom_textfield.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/paragraph_textfield.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 

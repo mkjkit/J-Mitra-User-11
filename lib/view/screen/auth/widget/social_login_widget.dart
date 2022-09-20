@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/social_login_model.dart';
-import 'package:flutter_sixvalley_ecommerce/localization/language_constrants.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/auth_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/facebook_login_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/google_sign_in_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/splash_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/theme_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/images.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/dashboard_screen.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/pre_dashboard.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/social_login_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/localization/language_constrants.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/auth_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/facebook_login_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/google_sign_in_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/splash_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/theme_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/images.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/dashboard/dashboard_screen.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/dashboard/pre_dashboard.dart';
 import 'package:provider/provider.dart';
 
 import 'mobile_verify_screen.dart';

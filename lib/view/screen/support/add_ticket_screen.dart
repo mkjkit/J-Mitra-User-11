@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/body/support_ticket_body.dart';
-import 'package:flutter_sixvalley_ecommerce/localization/language_constrants.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/support_ticket_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/color_resources.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/custom_themes.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/dimensions.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/button/custom_button.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/show_custom_snakbar.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/custom_expanded_app_bar.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/textfield/custom_textfield.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/body/support_ticket_body.dart';
+import 'package:com.jewelmitra.jewel_mitra/localization/language_constrants.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/support_ticket_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/color_resources.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/custom_themes.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/dimensions.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/button/custom_button.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/show_custom_snakbar.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/custom_expanded_app_bar.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/textfield/custom_textfield.dart';
 import 'package:provider/provider.dart';
 
 class AddTicketScreen extends StatefulWidget {

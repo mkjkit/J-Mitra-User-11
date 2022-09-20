@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "1043796341957-j8qrkc6u9a19revicn5spthkao8daor2.apps.googleusercontent.com",
+          "client_id": "1043796341957-1sdf991tp052hecf4ljrsj22gpap8rui.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jewelmitra.jewel_mitra",
+            "certificate_hash": "f1f0fb15089653c83cd2f544ccaf53ac6c031692"
+          }
+        },
+        {
+          "client_id": "1043796341957-16h7qg64bckfedc1nbqv3j313s8nccms.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,7 +35,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1043796341957-j8qrkc6u9a19revicn5spthkao8daor2.apps.googleusercontent.com",
+              "client_id": "1043796341957-16h7qg64bckfedc1nbqv3j313s8nccms.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -1,5 +1,5 @@
 
-import 'package:flutter_sixvalley_ecommerce/data/model/response/product_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/product_model.dart';
 
 class FeaturedDealModel {
 

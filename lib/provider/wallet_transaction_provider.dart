@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/base/api_response.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/loyalty_point_model.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/transaction_model.dart';
-import 'package:flutter_sixvalley_ecommerce/data/repository/wallet_transaction_repo.dart';
-import 'package:flutter_sixvalley_ecommerce/helper/api_checker.dart';
-import 'package:flutter_sixvalley_ecommerce/localization/language_constrants.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/base/api_response.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/loyalty_point_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/transaction_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/repository/wallet_transaction_repo.dart';
+import 'package:com.jewelmitra.jewel_mitra/helper/api_checker.dart';
+import 'package:com.jewelmitra.jewel_mitra/localization/language_constrants.dart';
 
 class WalletTransactionProvider extends ChangeNotifier {
   final WalletTransactionRepo transactionRepo;

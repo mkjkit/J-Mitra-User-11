@@ -1,18 +1,18 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/order_details.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/product_model.dart';
-import 'package:flutter_sixvalley_ecommerce/helper/price_converter.dart';
-import 'package:flutter_sixvalley_ecommerce/localization/language_constrants.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/order_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/splash_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/app_constants.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/color_resources.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/custom_themes.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/dimensions.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/images.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/custom_app_bar.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/image_diaglog.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/order_details.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/product_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/helper/price_converter.dart';
+import 'package:com.jewelmitra.jewel_mitra/localization/language_constrants.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/order_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/splash_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/app_constants.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/color_resources.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/custom_themes.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/dimensions.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/images.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/custom_app_bar.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/image_diaglog.dart';
 import 'package:provider/provider.dart';
 
 class RefundResultBottomSheet extends StatefulWidget {

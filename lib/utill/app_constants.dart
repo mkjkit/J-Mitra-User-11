@@ -1,4 +1,4 @@
-import 'package:flutter_sixvalley_ecommerce/data/model/response/language_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/language_model.dart';
 
 class AppConstants {
   static const String APP_NAME = 'Jewel Mitra';
@@ -154,7 +154,7 @@ class AppConstants {
   static const String COUNTRY_CODE = 'country_code';
   static const String LANGUAGE_CODE = 'language_code';
   static const String THEME = 'theme';
-  static const String TOPIC = 'sixvalley';
+  static const String TOPIC = 'jewelmitra';
   static const String USER_ADDRESS = 'user_address';
 
   // review
@@ -173,8 +173,8 @@ class AppConstants {
         languageCode: 'en'),
     LanguageModel(
         imageUrl: '',
-        languageName: 'Arabic',
-        countryCode: 'SA',
-        languageCode: 'ar'),
+        languageName: 'Hindi',
+        countryCode: 'IN',
+        languageCode: 'Hi'),
   ];
 }

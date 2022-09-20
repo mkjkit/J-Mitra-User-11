@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_sixvalley_ecommerce/provider/product_details_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/splash_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/custom_app_bar.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/product_details_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/splash_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/custom_app_bar.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 import 'package:provider/provider.dart';

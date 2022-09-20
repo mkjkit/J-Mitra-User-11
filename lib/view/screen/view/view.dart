@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_sixvalley_ecommerce/localization/language_constrants.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/view_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/custom_textfield.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/view/add_new_profile.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/view/biodata_overview.dart';
+import 'package:com.jewelmitra.jewel_mitra/localization/language_constrants.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/view_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/custom_textfield.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/view/add_new_profile.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/view/biodata_overview.dart';
 import 'package:provider/provider.dart';
 
 class ViewScrenn extends StatefulWidget {

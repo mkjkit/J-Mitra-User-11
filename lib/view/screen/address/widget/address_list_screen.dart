@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/address_model.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/color_resources.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/custom_themes.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/images.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/address_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/color_resources.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/custom_themes.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/images.dart';
 class AddressListPage extends StatelessWidget {
   final AddressModel address;
   AddressListPage({Key key, this.address}) : super(key: key);

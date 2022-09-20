@@ -1,13 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/body/MessageBody.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/base/api_response.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/chat_info_model.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/chat_model.dart';
-import 'package:flutter_sixvalley_ecommerce/data/repository/chat_repo.dart';
-import 'package:flutter_sixvalley_ecommerce/helper/api_checker.dart';
-import 'package:flutter_sixvalley_ecommerce/helper/date_converter.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/body/MessageBody.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/base/api_response.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/chat_info_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/chat_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/repository/chat_repo.dart';
+import 'package:com.jewelmitra.jewel_mitra/helper/api_checker.dart';
+import 'package:com.jewelmitra.jewel_mitra/helper/date_converter.dart';
 
 class ChatProvider extends ChangeNotifier {
   final ChatRepo chatRepo;

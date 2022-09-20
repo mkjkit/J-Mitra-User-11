@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/body/MessageBody.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/top_seller_model.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/chat_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/body/MessageBody.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/top_seller_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/chat_model.dart';
 
-import 'package:flutter_sixvalley_ecommerce/provider/chat_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/color_resources.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/custom_themes.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/dimensions.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/custom_app_bar.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/chat/widget/message_bubble.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/topSeller/all_top_seller_screen.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/chat_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/color_resources.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/custom_themes.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/dimensions.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/custom_app_bar.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/chat/widget/message_bubble.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/topSeller/all_top_seller_screen.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';

@@ -2,33 +2,33 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/top_seller_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/top_seller_model.dart';
 
-//import 'package:flutter_sixvalley_ecommerce/helper/product_type.dart';
-import 'package:flutter_sixvalley_ecommerce/localization/language_constrants.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/auth_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/product_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/seller_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/splash_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/color_resources.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/custom_themes.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/dimensions.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/images.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/animated_custom_dialog.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/custom_app_bar.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/guest_dialog.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/rating_bar.dart';
-//import 'package:flutter_sixvalley_ecommerce/view/basewidget/search_widget.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/chat/top_seller_chat_screen.dart';
-//import 'package:flutter_sixvalley_ecommerce/view/screen/home/widget/products_view.dart';
-//import 'package:flutter_sixvalley_ecommerce/provider/seller_cat_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/catalogue_provider.dart';
+//import 'package:com.jewelmitra.jewel_mitra/helper/product_type.dart';
+import 'package:com.jewelmitra.jewel_mitra/localization/language_constrants.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/auth_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/product_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/seller_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/splash_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/color_resources.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/custom_themes.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/dimensions.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/images.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/animated_custom_dialog.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/custom_app_bar.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/guest_dialog.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/rating_bar.dart';
+//import 'package:com.jewelmitra.jewel_mitra/view/basewidget/search_widget.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/chat/top_seller_chat_screen.dart';
+//import 'package:com.jewelmitra.jewel_mitra/view/screen/home/widget/products_view.dart';
+//import 'package:com.jewelmitra.jewel_mitra/provider/seller_cat_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/catalogue_provider.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/pdf_api.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/topSeller/pdf_viewer_page.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/button/button_widget.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/pdf_api.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/topSeller/pdf_viewer_page.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/button/button_widget.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -272,13 +272,13 @@ class _TopSellerProductScreenState extends State<TopSellerProductScreen> {
                                 onPressed: () async {
                                   // popAddProfile();
                                   // Downaload the file in Phone memory-------------------------------------------------->/
-                                  CatalogueProvider.downloadCatalogue(
-                                  widget.topSeller.catalogue, context);
-                                  final file = await PDFApi.loadNetwork(widget.topSeller.catalogue);
-                                  CatalogueProvider.openPDF(context, file);
+                                  //CatalogueProvider.downloadCatalogue(
+                                  //widget.topSeller.catalogue, context);
+                                  //final file = await PDFApi.loadNetwork(widget.topSeller.catalogue);
+                                  //CatalogueProvider.openPDF(context, file);
                                   //Use the openFile package to open the any file ------------------------------------>/
-                                  /*CatalogueProvider.openFile(
-                                      url: widget.topSeller.catalogue);*/
+                                  CatalogueProvider.openFile(
+                                      url: widget.topSeller.catalogue);
                                 },
                                 child: Text(
                                   getTranslated('view_catalogue', context),

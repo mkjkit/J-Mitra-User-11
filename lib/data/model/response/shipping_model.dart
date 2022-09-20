@@ -1,4 +1,4 @@
-import 'package:flutter_sixvalley_ecommerce/data/model/response/shipping_method_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/shipping_method_model.dart';
 
 class ShippingModel{
   int shippingIndex;

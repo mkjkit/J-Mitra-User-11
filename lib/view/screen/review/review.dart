@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/localization/language_constrants.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/review_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/review/add_new_review.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/review/review_overview.dart';
+import 'package:com.jewelmitra.jewel_mitra/localization/language_constrants.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/review_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/review/add_new_review.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/review/review_overview.dart';
 import 'package:provider/provider.dart';
 
 class ReviewList extends StatefulWidget {

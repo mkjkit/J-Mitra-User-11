@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/base/error_response.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/base/error_response.dart';
 
 class ApiErrorHandler {
   static dynamic getMessage(error) {

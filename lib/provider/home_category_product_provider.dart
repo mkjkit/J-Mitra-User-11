@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/home_category_product_model.dart';
-import 'package:flutter_sixvalley_ecommerce/data/repository/home_category_product_repo.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/base/api_response.dart';
-import 'package:flutter_sixvalley_ecommerce/helper/api_checker.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/product_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/home_category_product_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/repository/home_category_product_repo.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/base/api_response.dart';
+import 'package:com.jewelmitra.jewel_mitra/helper/api_checker.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/product_model.dart';
 
 
 class HomeCategoryProductProvider extends ChangeNotifier {

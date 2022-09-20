@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Testing</string>
-    <string name="facebook_app_id">592472151910119</string>
-    <string name="fb_login_protocol_scheme">fb592472151910119</string>
+    <string name="app_name">JewelMitra</string>
+    <string name="facebook_app_id">499230341622438</string>
+    <string name="fb_login_protocol_scheme">fb499230341622438</string>
 </resources>

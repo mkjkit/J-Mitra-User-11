@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/auth_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/wishlist_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/images.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/animated_custom_dialog.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/guest_dialog.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/show_custom_snakbar.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/auth_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/wishlist_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/images.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/animated_custom_dialog.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/guest_dialog.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/show_custom_snakbar.dart';
 import 'package:provider/provider.dart';
 
 class FavouriteButton extends StatelessWidget {

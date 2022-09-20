@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/base/api_response.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/coupon_model.dart';
-import 'package:flutter_sixvalley_ecommerce/data/repository/coupon_repo.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/base/api_response.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/coupon_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/repository/coupon_repo.dart';
 
 class CouponProvider extends ChangeNotifier {
   final CouponRepo couponRepo;

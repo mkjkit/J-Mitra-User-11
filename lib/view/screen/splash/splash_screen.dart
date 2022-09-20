@@ -1,20 +1,20 @@
 import 'dart:async';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/localization/language_constrants.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/auth_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/profile_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/splash_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/theme_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/color_resources.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/images.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/no_internet_screen.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/auth/auth_screen.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/dashboard_screen.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/pre_dashboard.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/maintenance/maintenance_screen.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/onboarding/onboarding_screen.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/splash/widget/splash_painter.dart';
+import 'package:com.jewelmitra.jewel_mitra/localization/language_constrants.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/auth_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/profile_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/splash_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/theme_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/color_resources.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/images.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/no_internet_screen.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/auth/auth_screen.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/dashboard/dashboard_screen.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/dashboard/pre_dashboard.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/maintenance/maintenance_screen.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/onboarding/onboarding_screen.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/splash/widget/splash_painter.dart';
 import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/bio_data_model.dart';
-import 'package:flutter_sixvalley_ecommerce/localization/language_constrants.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/view_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/custom_textfield.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/paragraph_textfield.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/view/view_large_image.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/bio_data_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/localization/language_constrants.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/view_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/custom_textfield.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/paragraph_textfield.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/view/view_large_image.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/pdf_api.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/topSeller/pdf_viewer_page.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/pdf_api.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/topSeller/pdf_viewer_page.dart';
 
 class BiodataOverView extends StatefulWidget {
   final Datum biodata;

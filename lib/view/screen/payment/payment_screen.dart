@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/localization/language_constrants.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/app_constants.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/animated_custom_dialog.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/custom_app_bar.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/custom_loader.dart';
-import 'package:flutter_sixvalley_ecommerce/view/basewidget/my_dialog.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/dashboard_screen.dart';
+import 'package:com.jewelmitra.jewel_mitra/localization/language_constrants.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/app_constants.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/animated_custom_dialog.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/custom_app_bar.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/custom_loader.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/basewidget/my_dialog.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/dashboard/dashboard_screen.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class PaymentScreen extends StatefulWidget {

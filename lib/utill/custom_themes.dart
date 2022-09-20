@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/dimensions.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/dimensions.dart';
 
 const titilliumRegular = TextStyle(
   fontFamily: 'Ubuntu',

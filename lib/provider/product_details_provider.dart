@@ -1,14 +1,14 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/body/review_body.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/base/api_response.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/product_model.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/response_model.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/review_model.dart';
-import 'package:flutter_sixvalley_ecommerce/data/repository/product_details_repo.dart';
-import 'package:flutter_sixvalley_ecommerce/helper/api_checker.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/banner_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/body/review_body.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/base/api_response.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/product_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/response_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/review_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/repository/product_details_repo.dart';
+import 'package:com.jewelmitra.jewel_mitra/helper/api_checker.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/banner_provider.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 

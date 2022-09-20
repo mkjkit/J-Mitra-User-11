@@ -3,11 +3,11 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:flutter_sixvalley_ecommerce/data/datasource/remote/dio/dio_client.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/bio_data_model.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/pincode_model.dart';
-import 'package:flutter_sixvalley_ecommerce/notification/my_notification.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/app_constants.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/datasource/remote/dio/dio_client.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/bio_data_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/pincode_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/notification/my_notification.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/app_constants.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 

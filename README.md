@@ -1,4 +1,4 @@
-# flutter_sixvalley_ecommerce
+# com.jewelmitra.jewel_mitra
 
 A new Flutter setup application for starting a project.
 

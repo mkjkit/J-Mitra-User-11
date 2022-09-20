@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sixvalley_ecommerce/data/model/response/loyalty_point_model.dart';
-import 'package:flutter_sixvalley_ecommerce/helper/date_converter.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/color_resources.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/custom_themes.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/dimensions.dart';
+import 'package:com.jewelmitra.jewel_mitra/data/model/response/loyalty_point_model.dart';
+import 'package:com.jewelmitra.jewel_mitra/helper/date_converter.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/color_resources.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/custom_themes.dart';
+import 'package:com.jewelmitra.jewel_mitra/utill/dimensions.dart';
 class LoyaltyPointWidget extends StatelessWidget {
   final LoyaltyPointList loyaltyPointModel;
   const LoyaltyPointWidget({Key key, this.loyaltyPointModel}) : super(key: key);

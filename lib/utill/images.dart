@@ -12,7 +12,7 @@ class Images {
   static const String more_image = 'assets/images/more.png';
   static const String shopping_image = 'assets/images/order.png';
   static const String wish_image = 'assets/images/wish.png';
-  static const String background = 'assets/images/background.jpg';
+  static const String background = 'assets/images/background.png';
   static const String coupon_banner_image = 'assets/images/coupon_banner.png';
   static const String chat_image = 'assets/images/chat.png';
   static const String filter_image = 'assets/images/filter.png';

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:flutter_sixvalley_ecommerce/provider/top_seller_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/dashboard_screen.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/more/more_screen.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/review/review.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/topSeller/all_top_seller_screen.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/view/view.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/top_seller_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/dashboard/dashboard_screen.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/more/more_screen.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/review/review.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/topSeller/all_top_seller_screen.dart';
+import 'package:com.jewelmitra.jewel_mitra/view/screen/view/view.dart';
 import 'package:provider/provider.dart';
 
 class PreDashboard extends StatefulWidget {
