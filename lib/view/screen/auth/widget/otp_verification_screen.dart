@@ -12,6 +12,8 @@ import 'package:com.jewelmitra.jewel_mitra/view/screen/auth/widget/reset_passwor
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../utill/custom_themes.dart';
+
 class VerificationScreen extends StatelessWidget {
   final String tempToken;
   final String mobileNumber;
@@ -34,7 +36,7 @@ class VerificationScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(height: 55),
-                      Image.asset(Images.login, width: 100, height: 100,),
+                      Image.asset(Images.logo_image, width: 100, height: 100,),
                       SizedBox(height: 40),
 
 
@@ -94,7 +96,9 @@ class VerificationScreen extends StatelessWidget {
                           },
                           child: Padding(
                             padding: EdgeInsets.all(Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                            child: Text(getTranslated('resend_code', context),),),
+                            child: Text(getTranslated('resend_code', context),
+                                style: titleHeader.copyWith(
+                                    color: ColorResources.getBlack(context))),),
                         ),
                       ),
                       SizedBox(height: 48),

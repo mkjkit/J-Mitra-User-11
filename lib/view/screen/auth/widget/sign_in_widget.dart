@@ -191,7 +191,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                             builder: (_) => ForgetPasswordScreen())),
                     child: Text(getTranslated('FORGET_PASSWORD', context),
                         style: titilliumRegular.copyWith(
-                            color: ColorResources.getLightSkyBlue(context))),
+                            color: ColorResources.getBlack(context))),
                   ),
                 ],
               ),
@@ -244,7 +244,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                 ),
                 child: Text(getTranslated('CONTINUE_AS_GUEST', context),
                     style: titleHeader.copyWith(
-                        color: ColorResources.getPrimary(context))),
+                        color: ColorResources.getBlack(context))),
               ),
             ),
           ],

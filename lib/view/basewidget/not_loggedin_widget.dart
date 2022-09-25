@@ -19,7 +19,7 @@ class NotLoggedInWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(Images.login, height: _height*0.2, width: _width),
+            Image.asset(Images.logo_image, height: _height*0.2, width: _width),
             SizedBox(height: _height*0.05),
             Text(getTranslated('PLEASE_LOGIN_FIRST', context), textAlign: TextAlign.center, style: titilliumSemiBold.copyWith(fontSize: _height*0.017)),
             SizedBox(height: _height*0.05),

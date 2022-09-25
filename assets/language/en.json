@@ -239,7 +239,7 @@
   "please_enter_4_digit_code": "Please enter the 4 digit code send to",
   "mobile_verification": "Mobile verification",
   "mobile_number": "Mobile Number",
-  "number_hint": "123456789",
+  "number_hint": "Enter Mobile Number",
   "continue" :" Continue",
   "enter_phone_number" : "Enter phone number",
   "phone_number_already_exist": "Phone number already exist",
@@ -382,7 +382,7 @@
   "failed": "Failed",
   "canceled": "Canceled",
   "enter_somethings": "Please input product name and then search",
-  "view": "View",
+  "view": "Biodata",
   "filter": "Filter",
   "age_filter": "Age Filter",
   "height_filter": "Height Filter",
@@ -412,6 +412,6 @@
   "biodata_error":"Please upload biodata!",
   "download_biodata":"Download Biodata",
   "download_catalogue":"Download Catalogue",
-  "theft_reported_person": "User Details",
+  "theft_reported_person": "User Details with theif image",
   "view_catalogue": "View Catalogue"
 }

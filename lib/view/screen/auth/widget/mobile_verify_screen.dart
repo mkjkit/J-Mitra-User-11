@@ -56,7 +56,7 @@ class _MobileVerificationScreenState extends State<MobileVerificationScreen> {
                       Center(
                         child: Padding(
                           padding: EdgeInsets.all(Dimensions.PADDING_SIZE_DEFAULT),
-                          child: Image.asset(Images.login, matchTextDirection: true,height: MediaQuery.of(context).size.height / 4.5),
+                          child: Image.asset(Images.logo_image, matchTextDirection: true,height: MediaQuery.of(context).size.height / 4.5),
                         ),
                       ),
                       SizedBox(height: Dimensions.PADDING_SIZE_LARGE),

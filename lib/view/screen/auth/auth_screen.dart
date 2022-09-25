@@ -38,7 +38,7 @@ class AuthScreen extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: Dimensions.topSpace),
-                  Image.asset(Images.logo_with_name_image, height: 150, width: 200),
+                  Image.asset(Images.logo_image, height: 200, width: 200),
 
 
                   Padding(
@@ -50,7 +50,7 @@ class AuthScreen extends StatelessWidget{
                           right: Dimensions.MARGIN_SIZE_EXTRA_SMALL, left: 0,
                           child: Container(
                             width: MediaQuery.of(context).size.width,
-                            height: 1, color: ColorResources.getGainsBoro(context),
+                            height: 1, color: ColorResources.getColombiaBlue(context),
                           ),
                         ),
 

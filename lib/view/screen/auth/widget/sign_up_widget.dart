@@ -332,13 +332,13 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           MaterialPageRoute(builder: (_) => DashBoardScreen())),
                           //MaterialPageRoute(builder: (_) => PreDashboard())),
                       child: Text(getTranslated('SKIP_FOR_NOW', context),
-                          style: titilliumRegular.copyWith(
+                          style: titleHeader.copyWith(
                               fontSize: Dimensions.FONT_SIZE_DEFAULT,
-                              color: ColorResources.getPrimary(context)))),
+                              color: ColorResources.getBlack(context)))),
                   Icon(
                     Icons.arrow_forward,
                     size: 15,
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).splashColor,
                   )
                 ],
               )),

@@ -85,6 +85,9 @@ class ColorResources {
   static Color debitCreditColor(BuildContext context) {
     return Provider.of<ThemeProvider>(context).darkTheme ? Color(0xFFC8E4FF) : Color(0xFFC8E4FF);
   }
+  static Color getBlack(BuildContext context) {
+    return Provider.of<ThemeProvider>(context).darkTheme ? Color(0xFFFFFFFF) : Color(0xFF000000);
+  }
 
 
   static const Color BLACK = Color(0xff000000);

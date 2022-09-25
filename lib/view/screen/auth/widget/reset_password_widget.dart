@@ -82,7 +82,7 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
           children: [
             Padding(
               padding: EdgeInsets.all(50),
-              child: Image.asset(Images.logo_with_name_image, height: 150, width: 200),
+              child: Image.asset(Images.logo_image, height: 150, width: 200),
             ),
 
             Padding(

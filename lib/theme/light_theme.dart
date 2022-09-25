@@ -6,6 +6,7 @@ ThemeData light = ThemeData(
   brightness: Brightness.light,
   highlightColor: Colors.white,
   hintColor: Color(0xFF000000),
+  splashColor: Color(0XFF000000),
   pageTransitionsTheme: PageTransitionsTheme(builders: {
     TargetPlatform.android: ZoomPageTransitionsBuilder(),
     TargetPlatform.iOS: ZoomPageTransitionsBuilder(),

@@ -239,7 +239,7 @@
   "please_enter_4_digit_code": "الرجاء إدخال رمز PIN المكون من 4 أرقام",
   "mobile_verification": "التحقق من الهاتف المحمول",
   "mobile_number": "رقم الهاتف المحمول",
-  "number_hint": "123456789",
+  "number_hint": "Enter Mobile Number",
   "continue" :" يكمل",
   "enter_phone_number" : "أدخل رقم الهاتف",
   "phone_number_already_exist": "رقم الهاتف موجود بالفعل",
