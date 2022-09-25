@@ -38,7 +38,7 @@ class AuthScreen extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: Dimensions.topSpace),
-                  Image.asset(Images.logo_image, height: 200, width: 200),
+                  Image.asset(Images.logo_image, height: 150, width: 150),
 
 
                   Padding(
