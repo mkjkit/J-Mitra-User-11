@@ -3,7 +3,7 @@ import 'package:com.jewelmitra.jewel_mitra/data/model/response/language_model.da
 class AppConstants {
   static const String APP_NAME = 'Jewel Mitra';
   static const String APP_VERSION = '11.0';
-  static const String BASE_URL = 'https://dailysmart.in';
+  static const String BASE_URL = 'https://jewelmitra.in';
   static const String USER_ID = 'userId';
   static const String NAME = 'name';
   static const String CATEGORIES_URI = '/api/v1/categories';
