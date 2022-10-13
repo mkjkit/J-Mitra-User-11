@@ -14,7 +14,6 @@ import 'package:com.jewelmitra.jewel_mitra/view/basewidget/textfield/custom_pass
 import 'package:com.jewelmitra.jewel_mitra/view/basewidget/textfield/custom_textfield.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/auth/widget/social_login_widget.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/dashboard/dashboard_screen.dart';
-//import 'package:com.jewelmitra.jewel_mitra/view/screen/dashboard/pre_dashboard.dart';
 import 'package:provider/provider.dart';
 
 import 'code_picker_widget.dart';
@@ -330,7 +329,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                   TextButton(
                       onPressed: () => Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (_) => DashBoardScreen())),
-                          //MaterialPageRoute(builder: (_) => PreDashboard())),
                       child: Text(getTranslated('SKIP_FOR_NOW', context),
                           style: titleHeader.copyWith(
                               fontSize: Dimensions.FONT_SIZE_DEFAULT,

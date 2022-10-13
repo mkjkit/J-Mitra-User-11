@@ -15,7 +15,6 @@ import 'package:com.jewelmitra.jewel_mitra/view/screen/auth/forget_password_scre
 import 'package:com.jewelmitra.jewel_mitra/view/screen/auth/widget/mobile_verify_screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/auth/widget/social_login_widget.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/dashboard/dashboard_screen.dart';
-import 'package:com.jewelmitra.jewel_mitra/view/screen/dashboard/pre_dashboard.dart';
 import 'package:provider/provider.dart';
 
 import 'otp_verification_screen.dart';

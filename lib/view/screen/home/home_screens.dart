@@ -232,8 +232,8 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             SizedBox(
-                              height: 250,
-                              width: 250,
+                              height: 150,
+                              width: 150,
                               child: InkWell(
                                 onTap: () {
                                   Navigator.push(

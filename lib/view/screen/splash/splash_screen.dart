@@ -11,7 +11,6 @@ import 'package:com.jewelmitra.jewel_mitra/utill/images.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/basewidget/no_internet_screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/auth/auth_screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/dashboard/dashboard_screen.dart';
-import 'package:com.jewelmitra.jewel_mitra/view/screen/dashboard/pre_dashboard.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/maintenance/maintenance_screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/onboarding/onboarding_screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/splash/widget/splash_painter.dart';
@@ -72,8 +71,7 @@ class _SplashScreenState extends State<SplashScreen> {
               Provider.of<AuthProvider>(context, listen: false).updateToken(context);
               Provider.of<ProfileProvider>(context, listen: false).getUserInfo(context);
               Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => DashBoardScreen()));
-              //Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => PreDashboard()));
-            } else {
+                          } else {
               if(Provider.of<SplashProvider>(context, listen: false).showIntro()) {
                 Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => OnBoardingScreen(
                   indicatorColor: ColorResources.GREY, selectedIndicatorColor: Theme.of(context).primaryColor,
