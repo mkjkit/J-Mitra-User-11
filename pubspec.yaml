@@ -3,7 +3,7 @@ description: A new Flutter setup application for starting a project.
 
 publish_to: 'none'
 
-version: 1.0.1+2
+version: 1.0.1+3
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -54,12 +54,11 @@ dependencies:
   flutter_widget_from_html_core: ^0.8.5+3
   flutter_html_table: ^3.0.0-alpha.3
   fluttertoast: ^8.0.9
-  file_picker: ^4.5.1
+  file_picker: ^5.2.2
   permission_handler: ^9.2.0
   push: ^0.1.3
   flutter_pdfview: ^1.2.2
-  advance_pdf_viewer: any
-  open_file: ^3.2.1
+  open_filex: ^4.2.2
 
 
 

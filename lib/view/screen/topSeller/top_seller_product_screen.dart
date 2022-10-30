@@ -23,7 +23,7 @@ import 'package:com.jewelmitra.jewel_mitra/view/screen/chat/top_seller_chat_scre
 //import 'package:com.jewelmitra.jewel_mitra/view/screen/home/widget/products_view.dart';
 //import 'package:com.jewelmitra.jewel_mitra/provider/seller_cat_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/catalogue_provider.dart';
-import 'package:open_file/open_file.dart';
+import 'package:open_filex/open_filex.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/pdf_api.dart';

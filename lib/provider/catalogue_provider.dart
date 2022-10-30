@@ -6,10 +6,9 @@ import 'package:com.jewelmitra.jewel_mitra/data/datasource/remote/dio/dio_client
 import 'package:com.jewelmitra.jewel_mitra/data/model/response/top_seller_model.dart';
 import 'package:com.jewelmitra.jewel_mitra/notification/my_notification.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/app_constants.dart';
-import 'package:open_file/open_file.dart';
+import 'package:open_filex/open_filex.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 import 'package:http/http.dart' as http;
 import 'package:com.jewelmitra.jewel_mitra/view/screen/topSeller/pdf_viewer_page.dart';
 
@@ -111,7 +110,7 @@ class CatalogueProvider extends ChangeNotifier {
     final file= await CatalogueProvider.downloadFile(url);
     if (file == null) return;
     print('Path: ${file.path}');
-    OpenFile.open(file.path);
+    OpenFilex.open(file.path);
 
   }
 
