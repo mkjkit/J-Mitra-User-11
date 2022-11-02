@@ -265,7 +265,7 @@ class _HomePageState extends State<HomePage> {
                                           flex: 7,
                                           child: Padding(
                                             padding: EdgeInsets.all(Dimensions
-                                                .PADDING_SIZE_DEFAULT),
+                                                .PADDING_SIZE_SMALL),
                                             child: ClipRRect(
                                               borderRadius:
                                               BorderRadius.vertical(
@@ -353,7 +353,7 @@ class _HomePageState extends State<HomePage> {
                                           flex: 7,
                                           child: Padding(
                                             padding: EdgeInsets.all(Dimensions
-                                                .PADDING_SIZE_DEFAULT),
+                                                .PADDING_SIZE_SMALL),
                                             child: ClipRRect(
                                               borderRadius:
                                               BorderRadius.vertical(

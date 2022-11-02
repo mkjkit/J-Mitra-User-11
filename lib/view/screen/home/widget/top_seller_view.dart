@@ -47,9 +47,12 @@ class TopSellerView extends StatelessWidget {
                           color: Theme.of(context).highlightColor,
                           boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.15), blurRadius: 5, spreadRadius: 1)]
                       ),
-                      child: ClipRRect(
+
+                      child: Padding(
+                        padding: EdgeInsets.all(Dimensions.PADDING_SIZE_EXTRA_SMALL),
+                        child: ClipRRect(
                         borderRadius: BorderRadius.all(Radius.circular(Dimensions.PADDING_SIZE_EXTRA_LARGE)),
-                        child: FadeInImage.assetNetwork(
+                          child: FadeInImage.assetNetwork(
                           fit: BoxFit.cover,
                           placeholder: Images.placeholder,
                           image: Provider.of<SplashProvider>(context,listen: false).baseUrls.shopImageUrl+'/'+topSellerProvider.topSellerList[index].image,
@@ -58,8 +61,8 @@ class TopSellerView extends StatelessWidget {
                       ),
                     ),
                   ),
-                ],
-              ),
+                  ),
+                ]),
             );
 
           },
@@ -115,7 +118,8 @@ class TopSellerShimmer extends StatelessWidget {
               ),
             )),
 
-          ]),
+          ]
+          ),
         );
 
       },
