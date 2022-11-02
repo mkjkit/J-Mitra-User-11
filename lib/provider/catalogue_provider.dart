@@ -10,7 +10,6 @@ import 'package:open_filex/open_filex.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:http/http.dart' as http;
-import 'package:com.jewelmitra.jewel_mitra/view/screen/topSeller/pdf_viewer_page.dart';
 
 
 
@@ -100,9 +99,7 @@ class CatalogueProvider extends ChangeNotifier {
           .showSnackBar(SnackBar(content: Text('Unable to Downloaded')));
     }
   }
-  static void openPDF(BuildContext context, File file) => Navigator.of(context).push(
-    MaterialPageRoute(builder: (context) => PDFViewerPage(file: file)),
-  );
+
 
   static openFile({url}) async{
     final response = await http.get(Uri.parse(url));

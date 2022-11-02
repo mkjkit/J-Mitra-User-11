@@ -59,6 +59,7 @@ class TopSellerView extends StatelessWidget {
                           imageErrorBuilder: (c, o, s) => Image.asset(Images.placeholder_1x1, fit: BoxFit.cover,),
                         ),
                       ),
+
                     ),
                   ),
                   ),

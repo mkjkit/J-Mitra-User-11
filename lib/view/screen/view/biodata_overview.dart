@@ -7,7 +7,7 @@ import 'package:com.jewelmitra.jewel_mitra/view/basewidget/paragraph_textfield.d
 import 'package:com.jewelmitra.jewel_mitra/view/screen/view/view_large_image.dart';
 import 'package:provider/provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/pdf_api.dart';
-import 'package:com.jewelmitra.jewel_mitra/view/screen/topSeller/pdf_viewer_page.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/catalogue_provider.dart';
 
 class BiodataOverView extends StatefulWidget {
   final Datum biodata;
@@ -331,7 +331,9 @@ class _BiodataOverViewState extends State<BiodataOverView> {
                               viewProvider.downloadBiodata(
                                   widget.biodata.biodata, context);
                               final file = await PDFApi.loadNetwork(widget.biodata.biodata);
-                              openPDF(context, file);
+                              //openPDF(context, file);
+                              CatalogueProvider.openFile(
+                                  url: widget.biodata.biodata);
                             },
                             child: Text(
                               getTranslated('download_biodata', context),
@@ -504,7 +506,7 @@ class _BiodataOverViewState extends State<BiodataOverView> {
       return Container();
     }
   }
-  static void openPDF(BuildContext context, file) => Navigator.of(context).push(
-    MaterialPageRoute(builder: (context) => PDFViewerPage(file: file)),
-  );
+  //static void openPDF(BuildContext context, file) => Navigator.of(context).push(
+    //MaterialPageRoute(builder: (context) => PDFViewerPage(file: file)),
+  //);
 }

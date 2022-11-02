@@ -8,7 +8,6 @@ import 'package:com.jewelmitra.jewel_mitra/provider/splash_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/theme_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/images.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/dashboard/dashboard_screen.dart';
-import 'package:com.jewelmitra.jewel_mitra/view/screen/dashboard/pre_dashboard.dart';
 import 'package:provider/provider.dart';
 
 import 'mobile_verify_screen.dart';

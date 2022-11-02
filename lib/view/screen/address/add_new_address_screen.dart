@@ -54,15 +54,15 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
       _address = Address.shipping;
     }
 
-    Provider.of<LocationProvider>(context, listen: false).initializeAllAddressType(context: context);
-    Provider.of<LocationProvider>(context, listen: false).updateAddressStatusMessae(message: '');
-    Provider.of<LocationProvider>(context, listen: false).updateErrorMessage(message: '');
-    _checkPermission(() => Provider.of<LocationProvider>(context, listen: false).getCurrentLocation(context, true, mapController: _controller),context);
+    //Provider.of<LocationProvider>(context, listen: false).initializeAllAddressType(context: context);
+    //Provider.of<LocationProvider>(context, listen: false).updateAddressStatusMessae(message: '');
+    //Provider.of<LocationProvider>(context, listen: false).updateErrorMessage(message: '');
+    //_checkPermission(() => Provider.of<LocationProvider>(context, listen: false).getCurrentLocation(context, true, mapController: _controller),context);
     if (widget.isEnableUpdate && widget.address != null) {
       _updateAddress = false;
-      Provider.of<LocationProvider>(context, listen: false).updatePosition(CameraPosition(target: LatLng(double.parse(widget.address.latitude), double.parse(widget.address.longitude))), true, widget.address.address, context);
+      /*Provider.of<LocationProvider>(context, listen: false).updatePosition(CameraPosition(target: LatLng(double.parse(widget.address.latitude), double.parse(widget.address.longitude))), true, widget.address.address, context);
       _contactPersonNameController.text = '${widget.address.contactPersonName}';
-      _contactPersonNumberController.text = '${widget.address.phone}';
+      _contactPersonNumberController.text = '${widget.address.phone}';*/
       if (widget.address.addressType == 'Home') {
         Provider.of<LocationProvider>(context, listen: false).updateAddressIndex(0, false);
       } else if (widget.address.addressType == 'Workplace') {
