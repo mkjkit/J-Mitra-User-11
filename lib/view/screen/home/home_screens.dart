@@ -2,12 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:com.jewelmitra.jewel_mitra/localization/language_constrants.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/banner_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/brand_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/category_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/featured_deal_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/flash_deal_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/home_category_product_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/product_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/splash_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/top_seller_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/app_constants.dart';
@@ -38,22 +32,10 @@ class _HomePageState extends State<HomePage> {
         .getBannerList(reload, context);
     Provider.of<BannerProvider>(context, listen: false)
         .getFooterBannerList(context);
-    Provider.of<CategoryProvider>(context, listen: false)
-        .getCategoryList(reload, context);
-    await Provider.of<HomeCategoryProductProvider>(context, listen: false)
-        .getHomeCategoryProductList(reload, context);
+
     await Provider.of<TopSellerProvider>(context, listen: false)
         .getTopSellerList(reload, context);
-    await Provider.of<BrandProvider>(context, listen: false)
-        .getBrandList(reload, context);
-    await Provider.of<ProductProvider>(context, listen: false)
-        .getLatestProductList(1, context, reload: reload);
-    await Provider.of<ProductProvider>(context, listen: false)
-        .getFeaturedProductList('1', context, reload: reload);
-    await Provider.of<FeaturedDealProvider>(context, listen: false)
-        .getFeaturedDealList(reload, context);
-    await Provider.of<ProductProvider>(context, listen: false)
-        .getLProductList('1', context, reload: reload);
+
   }
 
   void passData(int index, String title) {
@@ -79,13 +61,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    print('======>Single vendor active=======>$singleVendor');
-    List<String> types = [
-      getTranslated('new_arrival', context),
-      getTranslated('top_product', context),
-      getTranslated('best_selling', context),
-      getTranslated('discounted_product', context)
-    ];
+
     return Scaffold(
       backgroundColor: ColorResources.getHomeBg(context),
       resizeToAvoidBottomInset: false,
@@ -94,8 +70,7 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Theme.of(context).primaryColor,
           onRefresh: () async {
             await _loadData(context, true);
-            await Provider.of<FlashDealProvider>(context, listen: false)
-                .getMegaDealList(true, context, false);
+
 
             return true;
           },
