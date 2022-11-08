@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/cart_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/localization_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/wallet_transaction_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/wishlist_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/app_constants.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/chat/inbox_screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/localization/language_constrants.dart';
@@ -16,21 +13,14 @@ import 'package:com.jewelmitra.jewel_mitra/utill/dimensions.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/images.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/basewidget/animated_custom_dialog.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/basewidget/guest_dialog.dart';
-import 'package:com.jewelmitra.jewel_mitra/view/screen/cart/cart_screen.dart';
-import 'package:com.jewelmitra.jewel_mitra/view/screen/category/all_category_screen.dart';
-import 'package:com.jewelmitra.jewel_mitra/view/screen/loyaltyPoint/loyalty_point_screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/more/web_view_screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/more/widget/html_view_Screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/more/widget/sign_out_confirmation_dialog.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/notification/notification_screen.dart';
-import 'package:com.jewelmitra.jewel_mitra/view/screen/offer/offers_screen.dart';
-import 'package:com.jewelmitra.jewel_mitra/view/screen/order/order_screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/profile/address_list_screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/profile/profile_screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/setting/settings_screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/support/support_ticket_screen.dart';
-import 'package:com.jewelmitra.jewel_mitra/view/screen/wallet/wallet_screen.dart';
-import 'package:com.jewelmitra.jewel_mitra/view/screen/wishlist/wishlist_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'faq_screen.dart';
@@ -50,12 +40,7 @@ class _MoreScreenState extends State<MoreScreen> {
         !Provider.of<AuthProvider>(context, listen: false).isLoggedIn();
     if (!isGuestMode) {
       Provider.of<ProfileProvider>(context, listen: false).getUserInfo(context);
-      Provider.of<WishListProvider>(context, listen: false).initWishList(
-        context,
-        Provider.of<LocalizationProvider>(context, listen: false)
-            .locale
-            .countryCode,
-      );
+
       version = Provider.of<SplashProvider>(context, listen: false)
                   .configModel
                   .version !=
@@ -65,20 +50,11 @@ class _MoreScreenState extends State<MoreScreen> {
               .version
           : 'version';
       Provider.of<ProfileProvider>(context, listen: false).getUserInfo(context);
-      if (Provider.of<SplashProvider>(context, listen: false)
-              .configModel
-              .walletStatus ==
-          1) {
-        Provider.of<WalletTransactionProvider>(context, listen: false)
-            .getTransactionList(context, 1);
-      }
+
       if (Provider.of<SplashProvider>(context, listen: false)
               .configModel
               .loyaltyPointStatus ==
-          1) {
-        Provider.of<WalletTransactionProvider>(context, listen: false)
-            .getLoyaltyPointList(context, 1);
-      }
+          1) ;
     }
     singleVendor = Provider.of<SplashProvider>(context, listen: false)
             .configModel
@@ -181,107 +157,7 @@ class _MoreScreenState extends State<MoreScreen> {
                 children: [
                   SizedBox(height: Dimensions.PADDING_SIZE_LARGE),
 
-                  // Top Row Items
-                  /*Container(
-                    height: MediaQuery.of(context).size.width / 3.6,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                      /*child: Row(
-                        children: [
-                          Icon(Icons.arrow_back_ios,
-                              color: Theme.of(context).primaryColor),
-                          Expanded(
-                            child: ListView(
-                                scrollDirection: Axis.horizontal,
-                                physics: BouncingScrollPhysics(),
-                                children: [
-                                  Provider.of<SplashProvider>(context,
-                                                  listen: false)
-                                              .configModel
-                                              .walletStatus ==
-                                          1
-                                      ? SquareButton(
-                                          image: Images.wallet,
-                                          title:
-                                              getTranslated('wallet', context),
-                                          navigateTo: WalletScreen(),
-                                          count: 1,
-                                          hasCount: false)
-                                      : SizedBox(),
-                                  Provider.of<SplashProvider>(context,
-                                                  listen: false)
-                                              .configModel
-                                              .loyaltyPointStatus ==
-                                          1
-                                      ? SquareButton(
-                                          image: Images.loyalty_point,
-                                          title: getTranslated(
-                                              'loyalty_point', context),
-                                          navigateTo: LoyaltyPointScreen(),
-                                          count: 1,
-                                          hasCount: false,
-                                        )
-                                      : SizedBox(),
-                                  SquareButton(
-                                    image: Images.shopping_image,
-                                    title: getTranslated('orders', context),
-                                    navigateTo: OrderScreen(),
-                                    count: 1,
-                                    hasCount: false,
-                                  ),
-                                  SquareButton(
-                                    image: Images.cart_image,
-                                    title: getTranslated('CART', context),
-                                    navigateTo: CartScreen(),
-                                    count: Provider.of<CartProvider>(context,
-                                            listen: false)
-                                        .cartList
-                                        .length,
-                                    hasCount: true,
-                                  ),
-                                  SquareButton(
-                                    image: Images.offers,
-                                    title: getTranslated('offers', context),
-                                    navigateTo: OffersScreen(),
-                                    count: 0,
-                                    hasCount: false,
-                                  ),
-                                  SquareButton(
-                                    image: Images.wishlist,
-                                    title: getTranslated('wishlist', context),
-                                    navigateTo: WishListScreen(),
-                                    count: Provider.of<AuthProvider>(context,
-                                                    listen: false)
-                                                .isLoggedIn() &&
-                                            Provider.of<WishListProvider>(
-                                                        context,
-                                                        listen: false)
-                                                    .wishList !=
-                                                null &&
-                                            Provider.of<WishListProvider>(
-                                                        context,
-                                                        listen: false)
-                                                    .wishList
-                                                    .length >
-                                                0
-                                        ? Provider.of<WishListProvider>(context,
-                                                listen: false)
-                                            .wishList
-                                            .length
-                                        : 0,
-                                    hasCount: false,
-                                  ),
-                                ]),
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios,
-                            color: Theme.of(context).primaryColor,
-                          ),
-                        ],
-                      ),*/
-                    ),
-                  ),*/
+
                   SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
 
                   // Buttons

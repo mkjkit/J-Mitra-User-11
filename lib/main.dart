@@ -10,7 +10,6 @@ import 'package:com.jewelmitra.jewel_mitra/provider/home_category_product_provid
 import 'package:com.jewelmitra.jewel_mitra/provider/location_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/seller_cat_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/top_seller_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/wallet_transaction_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/order/order_details_screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/auth_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/brand_provider.dart';
@@ -28,7 +27,6 @@ import 'package:com.jewelmitra.jewel_mitra/provider/seller_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/splash_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/support_ticket_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/theme_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/wishlist_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/theme/dark_theme.dart';
 import 'package:com.jewelmitra.jewel_mitra/theme/light_theme.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/app_constants.dart';
@@ -88,7 +86,6 @@ Future<void> main() async {
       ChangeNotifierProvider(create: (context) => di.sl<OrderProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<NotificationProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<ProfileProvider>()),
-      ChangeNotifierProvider(create: (context) => di.sl<WishListProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<SplashProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<CartProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<SupportTicketProvider>()),
@@ -97,7 +94,6 @@ Future<void> main() async {
       ChangeNotifierProvider(create: (context) => di.sl<GoogleSignInProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<FacebookLoginProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<LocationProvider>()),
-      ChangeNotifierProvider(create: (context) => di.sl<WalletTransactionProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<ReviewProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<ViewProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<CatalogueProvider>()),

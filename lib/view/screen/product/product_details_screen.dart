@@ -12,7 +12,6 @@ import 'package:com.jewelmitra.jewel_mitra/localization/language_constrants.dart
 import 'package:com.jewelmitra.jewel_mitra/provider/product_details_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/product_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/theme_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/wishlist_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/custom_themes.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/dimensions.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/basewidget/no_internet_screen.dart';
@@ -46,10 +45,7 @@ class _ProductDetailsState extends State<ProductDetails> {
       Provider.of<ProductProvider>(context, listen: false).initRelatedProductList(widget.product.id.toString(), context);
       Provider.of<ProductDetailsProvider>(context, listen: false).getCount(widget.product.id.toString(), context);
       Provider.of<ProductDetailsProvider>(context, listen: false).getSharableLink(widget.product.slug.toString(), context);
-      if(Provider.of<AuthProvider>(context, listen: false).isLoggedIn()) {
-        Provider.of<WishListProvider>(context, listen: false).checkWishList(widget.product.id.toString(), context);
-      }
-      //Provider.of<ProductProvider>(context, listen: false).initSellerProductList(widget.product.userId.toString(), 1, context);
+
 
 
 

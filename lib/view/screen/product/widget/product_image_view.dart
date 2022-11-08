@@ -4,7 +4,6 @@ import 'package:com.jewelmitra.jewel_mitra/helper/price_converter.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/product_details_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/splash_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/theme_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/wishlist_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/color_resources.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/custom_themes.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/dimensions.dart';
@@ -89,8 +88,7 @@ class ProductImageView extends StatelessWidget {
                     FavouriteButton(
                       backgroundColor: ColorResources.getImageBg(context),
                       favColor: Colors.redAccent,
-                      isSelected: Provider.of<WishListProvider>(context,listen: false).isWish,
-                      productId: productModel.id,
+
                     ),
                     SizedBox(height: Dimensions.PADDING_SIZE_SMALL,),
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/auth_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/wishlist_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/images.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/basewidget/animated_custom_dialog.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/basewidget/guest_dialog.dart';
@@ -28,25 +27,9 @@ class FavouriteButton extends StatelessWidget {
       onTap: () {
         if (isGuestMode) {
           showAnimatedDialog(context, GuestDialog(), isFlip: true);
-        } else {
-          Provider.of<WishListProvider>(context, listen: false).isWish ?
-          Provider.of<WishListProvider>(context, listen: false).removeWishList(productId, feedbackMessage: feedbackMessage) :
-          Provider.of<WishListProvider>(context, listen: false).addWishList(productId, feedbackMessage: feedbackMessage);
         }
       },
-      child: Consumer<WishListProvider>(
-        builder: (context, wishListProvider, child) => Card(
-          elevation: 2,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-          color: Theme.of(context).cardColor,
-          child: Padding(padding: EdgeInsets.all(8),
-            child: Image.asset(
-              wishListProvider.isWish ? Images.wish_image : Images.wishlist,
-              color: favColor, height: 16, width: 16,
-            ),
-          ),
-        ),
-      ),
+
     );
   }
 }

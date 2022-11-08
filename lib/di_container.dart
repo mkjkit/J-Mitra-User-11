@@ -22,8 +22,6 @@ import 'package:com.jewelmitra.jewel_mitra/data/repository/seller_repo.dart';
 import 'package:com.jewelmitra.jewel_mitra/data/repository/splash_repo.dart';
 import 'package:com.jewelmitra.jewel_mitra/data/repository/support_ticket_repo.dart';
 import 'package:com.jewelmitra.jewel_mitra/data/repository/top_seller_repo.dart';
-import 'package:com.jewelmitra.jewel_mitra/data/repository/wallet_transaction_repo.dart';
-import 'package:com.jewelmitra.jewel_mitra/data/repository/wishlist_repo.dart';
 import 'package:com.jewelmitra.jewel_mitra/helper/network_info.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/auth_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/banner_provider.dart';
@@ -51,8 +49,6 @@ import 'package:com.jewelmitra.jewel_mitra/provider/splash_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/support_ticket_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/theme_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/top_seller_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/wallet_transaction_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/wishlist_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/app_constants.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/view_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/review_provider.dart';
@@ -89,12 +85,10 @@ Future<void> init() async {
   sl.registerLazySingleton(() => ChatRepo(dioClient: sl()));
   sl.registerLazySingleton(() => NotificationRepo(dioClient: sl()));
   sl.registerLazySingleton(() => ProfileRepo(dioClient: sl(), sharedPreferences: sl()));
-  sl.registerLazySingleton(() => WishListRepo(dioClient: sl()));
   sl.registerLazySingleton(() => CartRepo(dioClient: sl(), sharedPreferences: sl()));
   sl.registerLazySingleton(() => SplashRepo(sharedPreferences: sl(), dioClient: sl()));
   sl.registerLazySingleton(() => SupportTicketRepo(dioClient: sl()));
   sl.registerLazySingleton(() => LocationRepo(dioClient: sl()));
-  sl.registerLazySingleton(() => WalletTransactionRepo(dioClient: sl()));
 
   // Provider
   sl.registerFactory(() => CategoryProvider(categoryRepo: sl()));
@@ -115,7 +109,6 @@ Future<void> init() async {
   sl.registerFactory(() => ChatProvider(chatRepo: sl()));
   sl.registerFactory(() => NotificationProvider(notificationRepo: sl()));
   sl.registerFactory(() => ProfileProvider(profileRepo: sl()));
-  sl.registerFactory(() => WishListProvider(wishListRepo: sl(), productDetailsRepo: sl()));
   sl.registerFactory(() => SplashProvider(splashRepo: sl()));
   sl.registerFactory(() => CartProvider(cartRepo: sl()));
   sl.registerFactory(() => SupportTicketProvider(supportTicketRepo: sl()));
@@ -124,7 +117,6 @@ Future<void> init() async {
   sl.registerFactory(() => GoogleSignInProvider());
   sl.registerFactory(() => FacebookLoginProvider());
   sl.registerFactory(() => LocationProvider(sharedPreferences: sl(), locationRepo: sl()));
-  sl.registerFactory(() => WalletTransactionProvider(transactionRepo: sl()));
   sl.registerFactory(() => ReviewProvider(sl()));
   sl.registerFactory(() => ViewProvider(sl()));
   sl.registerFactory(() => CatalogueProvider(sl()));
