@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:com.jewelmitra.jewel_mitra/localization/language_constrants.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/banner_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/brand_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/category_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/featured_deal_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/flash_deal_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/home_category_product_provider.dart';
+import 'package:com.jewelmitra.jewel_mitra/provider/product_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/splash_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/top_seller_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/app_constants.dart';
@@ -13,6 +18,7 @@ import 'package:com.jewelmitra.jewel_mitra/utill/images.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/basewidget/title_row.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/home/widget/announcement.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/home/widget/banners_view.dart';
+
 import 'package:com.jewelmitra.jewel_mitra/view/screen/home/widget/top_seller_view.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/review/review.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/topSeller/all_top_seller_screen.dart';
@@ -32,10 +38,22 @@ class _HomePageState extends State<HomePage> {
         .getBannerList(reload, context);
     Provider.of<BannerProvider>(context, listen: false)
         .getFooterBannerList(context);
-
+    Provider.of<CategoryProvider>(context, listen: false)
+        .getCategoryList(reload, context);
+    await Provider.of<HomeCategoryProductProvider>(context, listen: false)
+        .getHomeCategoryProductList(reload, context);
     await Provider.of<TopSellerProvider>(context, listen: false)
         .getTopSellerList(reload, context);
-
+    await Provider.of<BrandProvider>(context, listen: false)
+        .getBrandList(reload, context);
+    await Provider.of<ProductProvider>(context, listen: false)
+        .getLatestProductList(1, context, reload: reload);
+    await Provider.of<ProductProvider>(context, listen: false)
+        .getFeaturedProductList('1', context, reload: reload);
+    await Provider.of<FeaturedDealProvider>(context, listen: false)
+        .getFeaturedDealList(reload, context);
+    await Provider.of<ProductProvider>(context, listen: false)
+        .getLProductList('1', context, reload: reload);
   }
 
   void passData(int index, String title) {
@@ -55,6 +73,7 @@ class _HomePageState extends State<HomePage> {
 
 
     _loadData(context, false);
+
 
   }
 
@@ -95,6 +114,10 @@ class _HomePageState extends State<HomePage> {
                     title: Image.asset(Images.logo_with_name_image, height: 35),
                     actions: [
 
+                    ],
+                  ),
+
+
                   SliverToBoxAdapter(
                     child: Column(
                       children: [
@@ -103,31 +126,7 @@ class _HomePageState extends State<HomePage> {
                               top: Dimensions.PADDING_SIZE_EXTRA_SMALL),
                           child: BannersView(),
                         ),
-                        // comment start
-                        // Category title
-                        // Padding(
-                        //   padding: EdgeInsets.fromLTRB(
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                        //   child: TitleRow(
-                        //       title: getTranslated('CATEGORY', context),
-                        //       onTap: () {
-                        //         Navigator.push(
-                        //             context,
-                        //             MaterialPageRoute(
-                        //                 builder: (_) => AllCategoryScreen()));
-                        //       }),
-                        // ),
 
-                        // //category
-                        // Padding(
-                        //   padding: EdgeInsets.symmetric(
-                        //       horizontal: Dimensions.PADDING_SIZE_SMALL),
-                        //   child: CategoryView(isHomePage: true),
-                        // ),
-                        // comment end
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -310,7 +309,6 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ],
                         ),
-
                         //top seller
                         singleVendor
                             ? SizedBox()
@@ -373,9 +371,9 @@ class _HomePageState extends State<HomePage> {
                   : SizedBox(),
             ],
           ),
-        ]),
+        ),
       ),
-    ),);
+    );
   }
 }
 
