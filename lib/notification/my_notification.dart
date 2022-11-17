@@ -2,10 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:com.jewelmitra.jewel_mitra/view/screen/order/order_details_screen.dart';
-import 'package:com.jewelmitra.jewel_mitra/main.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/app_constants.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -16,12 +13,7 @@ class MyNotification {
     var iOSInitialize = new IOSInitializationSettings();
     var initializationsSettings = new InitializationSettings(android: androidInitialize, iOS: iOSInitialize);
     flutterLocalNotificationsPlugin.initialize(initializationsSettings, onSelectNotification: (String payload) async {
-      try{
-        if(payload != null && payload.isNotEmpty) {
-          MyApp.navigatorKey.currentState.push(
-              MaterialPageRoute(builder: (context) => OrderDetailsScreen(orderModel: null, orderId: int.parse(payload),orderType: 'default_type',)));
-        }
-      }catch (e) {}
+
       return;
     });
 
@@ -31,12 +23,7 @@ class MyNotification {
     });
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       print("onOpenApp: ${message.notification.title}/${message.notification.body}/${message.notification.titleLocKey}");
-      try{
-        if(message.notification.titleLocKey != null && message.notification.titleLocKey.isNotEmpty) {
-          MyApp.navigatorKey.currentState.push(
-              MaterialPageRoute(builder: (context) => OrderDetailsScreen(orderModel: null, orderId: int.parse(message.notification.titleLocKey),orderType: 'default_type',)));
-        }
-      }catch (e) {}
+
     });
   }
 

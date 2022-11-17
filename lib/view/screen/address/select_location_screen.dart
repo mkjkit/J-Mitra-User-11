@@ -52,7 +52,7 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
                     builder: (ctx, locationProvider, child) => Stack(
                       clipBehavior: Clip.none,
                       children: [
-                        GoogleMap(
+                       /* GoogleMap(
                           mapType: MapType.normal,
                           initialCameraPosition:  CameraPosition(
                             target:  LatLng(locationProvider.position.latitude, locationProvider.position.longitude),
@@ -67,7 +67,7 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
                             locationProvider.updatePosition(_cameraPosition, false, null, context);
                           },
                           onCameraMove: ((_position) => _cameraPosition = _position),
-                        ),
+                        ),*/
 
                         locationProvider.pickAddress != null ?
                         InkWell(
@@ -121,12 +121,12 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
                                     buttonText: getTranslated('select_location', context),
                                     onTap: () {
                                       print('==india===');
-                                      if(widget.googleMapController != null) {
+                                      /*if(widget.googleMapController != null) {
                                         widget.googleMapController.moveCamera(CameraUpdate.newCameraPosition(CameraPosition(target: LatLng(
                                           locationProvider.pickPosition.latitude, locationProvider.pickPosition.longitude,
                                         ), zoom: 15)));
                                         locationProvider.setAddAddressData();
-                                      }
+                                      }*/
 
                                       locationProvider.setAddAddressData();
                                       Navigator.of(context).pop();

@@ -28,8 +28,8 @@ class AddressModel {
         this.updatedAt,
         this.state,
         this.country,
-        this.latitude,
-        this.longitude,
+        //this.latitude,
+        //this.longitude,
         this.isBilling});
 
   AddressModel.fromJson(Map<String, dynamic> json) {
@@ -45,8 +45,8 @@ class AddressModel {
     updatedAt = json['updated_at'];
     state = json['state'];
     country = json['country'];
-    latitude = json['latitude'];
-    longitude = json['longitude'];
+    //latitude = json['latitude'];
+    //longitude = json['longitude'];
     //isBilling = json['is_billing'];
   }
 
@@ -64,8 +64,8 @@ class AddressModel {
     data['updated_at'] = this.updatedAt;
     data['state'] = this.state;
     data['country'] = this.country;
-    data['latitude'] = this.latitude;
-    data['longitude'] = this.longitude;
+    data['latitude'] = 10.2552;
+    data['longitude'] = 10.2562;
     data['is_billing'] = 1;
     return data;
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:com.jewelmitra.jewel_mitra/helper/product_type.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/auth_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/color_resources.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/basewidget/rating_bar.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/home/widget/products_view.dart';
@@ -16,7 +15,6 @@ import 'package:com.jewelmitra.jewel_mitra/utill/custom_themes.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/dimensions.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/basewidget/no_internet_screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/basewidget/title_row.dart';
-import 'package:com.jewelmitra.jewel_mitra/view/screen/product/widget/bottom_cart_view.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/product/widget/product_image_view.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/product/widget/product_specification_view.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/product/widget/product_title_view.dart';
@@ -82,7 +80,7 @@ class _ProductDetailsState extends State<ProductDetails> {
 
 
 
-          bottomNavigationBar: BottomCartView(product: widget.product),
+
 
 
 

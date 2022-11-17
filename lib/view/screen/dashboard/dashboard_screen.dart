@@ -7,7 +7,6 @@ import 'package:com.jewelmitra.jewel_mitra/utill/images.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/home/home_screens.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/more/more_screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/notification/notification_screen.dart';
-import 'package:com.jewelmitra.jewel_mitra/view/screen/order/order_screen.dart';
 import 'package:provider/provider.dart';
 
 class DashBoardScreen extends StatefulWidget {
@@ -100,12 +99,10 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     if(!isSingleVendor){
       _list.add(_barItem(Images.home_image, getTranslated('home', context), 0));
       _list.add(_barItem(Images.message_image, getTranslated('inbox', context), 1));
-      //_list.add(_barItem(Images.shopping_image, getTranslated('orders', context), 2));
       _list.add(_barItem(Images.notification, getTranslated('notification', context), 2));
       _list.add(_barItem(Images.more_image, getTranslated('more', context), 3));
     }else{
       _list.add(_barItem(Images.home_image, getTranslated('home', context), 0));
-      //_list.add(_barItem(Images.shopping_image, getTranslated('orders', context), 1));
       _list.add(_barItem(Images.notification, getTranslated('notification', context), 1));
       _list.add(_barItem(Images.more_image, getTranslated('more', context), 2));
     }

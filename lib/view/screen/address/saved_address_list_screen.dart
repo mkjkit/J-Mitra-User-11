@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:com.jewelmitra.jewel_mitra/localization/language_constrants.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/order_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/profile_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/color_resources.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/dimensions.dart';
@@ -33,8 +32,7 @@ class SavedAddressListScreen extends StatelessWidget {
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
                       return InkWell(
-                        onTap: () {Provider.of<OrderProvider>(context, listen: false).setAddressIndex(index);
-                        Navigator.pop(context);
+                        onTap: () {
                         },
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT),
@@ -43,7 +41,6 @@ class SavedAddressListScreen extends StatelessWidget {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               color: ColorResources.getIconBg(context),
-                              border: index == Provider.of<OrderProvider>(context).addressIndex ? Border.all(width: 2, color: Theme.of(context).primaryColor) : null,
                             ),
                             child: AddressListPage(address: profile.addressList[index]),
                           ),

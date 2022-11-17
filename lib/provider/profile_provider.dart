@@ -13,7 +13,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 
-import 'order_provider.dart';
 
 class ProfileProvider extends ChangeNotifier {
   final ProfileRepo profileRepo;
@@ -112,8 +111,7 @@ class ProfileProvider extends ChangeNotifier {
       Map map = apiResponse.response.data;
       String message = map["message"];
       initAddressList(context);
-      Provider.of<OrderProvider>(context, listen: false).shippingAddressNull();
-      Provider.of<OrderProvider>(context, listen: false).billingAddressNull();
+
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message), backgroundColor: Colors.green));
 
       _isLoading = false;

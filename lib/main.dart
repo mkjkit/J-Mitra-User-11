@@ -10,7 +10,6 @@ import 'package:com.jewelmitra.jewel_mitra/provider/home_category_product_provid
 import 'package:com.jewelmitra.jewel_mitra/provider/location_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/seller_cat_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/top_seller_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/view/screen/order/order_details_screen.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/auth_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/brand_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/cart_provider.dart';
@@ -20,7 +19,6 @@ import 'package:com.jewelmitra.jewel_mitra/provider/coupon_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/localization_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/notification_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/onboarding_provider.dart';
-import 'package:com.jewelmitra.jewel_mitra/provider/order_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/profile_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/search_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/seller_provider.dart';
@@ -83,7 +81,6 @@ Future<void> main() async {
       ChangeNotifierProvider(create: (context) => di.sl<SellerProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<CouponProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<ChatProvider>()),
-      ChangeNotifierProvider(create: (context) => di.sl<OrderProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<NotificationProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<ProfileProvider>()),
       ChangeNotifierProvider(create: (context) => di.sl<SplashProvider>()),
@@ -128,8 +125,9 @@ class MyApp extends StatelessWidget {
         FallbackLocalizationDelegate()
       ],
       supportedLocales: _locals,
-      home: orderId == null ? SplashScreen() : OrderDetailsScreen(orderModel: null,
-        orderId: orderId, orderType: 'default_type',isNotification: true),
+      home: orderId == null ? SplashScreen() : null,
+      /*OrderDetailsScreen(orderModel: null,
+        orderId: orderId, orderType: 'default_type',isNotification: true),*/
     );
   }
 }

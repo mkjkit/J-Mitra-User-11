@@ -5,7 +5,6 @@ import 'package:com.jewelmitra.jewel_mitra/data/datasource/remote/exception/api_
 import 'package:com.jewelmitra.jewel_mitra/data/model/response/address_model.dart';
 import 'package:com.jewelmitra.jewel_mitra/data/model/response/base/api_response.dart';
 import 'package:com.jewelmitra.jewel_mitra/utill/app_constants.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
@@ -60,19 +59,12 @@ class LocationRepo {
   List<String> getAllAddressType({BuildContext context}) {
     return [
       'Home',
-      'Workplace',
-      'Other',
+      "Workplace",
+
     ];
   }
 
-  Future<ApiResponse> getAddressFromGeocode(LatLng latLng) async {
-    try {
-      Response response = await dioClient.get('${AppConstants.GEOCODE_URI}?lat=${latLng.latitude}&lng=${latLng.longitude}');
-      return ApiResponse.withSuccess(response);
-    } catch (e) {
-      return ApiResponse.withError(ApiErrorHandler.getMessage(e));
-    }
-  }
+
 
   Future<ApiResponse> searchLocation(String text) async {
     try {
@@ -92,15 +84,6 @@ class LocationRepo {
     }
   }
 
-  Future<ApiResponse> getDistanceInMeter(LatLng originLatLng, LatLng destinationLatLng) async {
-    try {
-      Response response = await dioClient.get('${AppConstants.DISTANCE_MATRIX_URI}'
-          '?origin_lat=${originLatLng.latitude}&origin_lng=${originLatLng.longitude}'
-          '&destination_lat=${destinationLatLng.latitude}&destination_lng=${destinationLatLng.longitude}');
-      return ApiResponse.withSuccess(response);
-    } catch (e) {
-      return ApiResponse.withError(ApiErrorHandler.getMessage(e));
-    }
-  }
+
 
 }

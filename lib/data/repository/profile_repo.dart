@@ -20,9 +20,8 @@ class ProfileRepo {
     try {
       List<String> addressTypeList = [
         'Select Address type',
-        'Permanent',
         'Home',
-        'Office',
+
       ];
       Response response = Response(requestOptions: RequestOptions(path: ''), data: addressTypeList, statusCode: 200);
       return ApiResponse.withSuccess(response);

@@ -28,8 +28,8 @@ class ViewProvider extends ChangeNotifier {
 
   bool _isLoading = false;
   bool _isFilter = false;
-  RangeValues _ageFilter = RangeValues(18.0, 30.0);
-  RangeValues _heightFilter = RangeValues(5.0, 6.0);
+  RangeValues _ageFilter = RangeValues(18.0, 55.0);
+  RangeValues _heightFilter = RangeValues(4.0, 6.0);
   String _genderFilter = '';
   bool _isApplyingFilter = false;
   final List<String> _genders = ['Male', 'Female'];
