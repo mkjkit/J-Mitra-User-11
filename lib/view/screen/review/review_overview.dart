@@ -147,6 +147,26 @@ class ReviewOverview extends StatelessWidget {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    height: 6,
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      style: TextStyle(color: Colors.black),
+                      children: [
+                        TextSpan(
+                          text: 'State:- ',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        TextSpan(
+                          text: review.state,
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),

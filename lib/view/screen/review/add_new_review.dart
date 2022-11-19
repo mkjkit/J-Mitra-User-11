@@ -29,7 +29,7 @@ class _AddReviewState extends State<AddReview> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Review'),
+        title: Text('Report theft'),
         leading: GestureDetector(
             onTap: () {
               Navigator.pop(context);
@@ -63,7 +63,7 @@ class _AddReviewState extends State<AddReview> {
                         padding: EdgeInsets.all(Dimensions.PADDING_SIZE_SMALL),
                         child: Row(children: [
                           Expanded(
-                              child: Text(getTranslated('your_rating', context),
+                              child: Text(getTranslated('your_observation', context),
                                   style: robotoBold.copyWith(
                                       fontSize: Dimensions.FONT_SIZE_SMALL))),
                           // Container(

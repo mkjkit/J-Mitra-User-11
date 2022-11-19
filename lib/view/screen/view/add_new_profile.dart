@@ -225,12 +225,21 @@ class _AddNewProfileState extends State<AddNewProfile> {
                   }
                 }));
 
+
                 return Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        getTranslated('upload_profile_image', context),
+                        style: TextStyle(
+                            fontSize: 17, fontWeight: FontWeight.bold),
+                      ),
                       SizedBox(
                         height: 10,
                       ),

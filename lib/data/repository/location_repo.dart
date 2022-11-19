@@ -61,8 +61,7 @@ class LocationRepo {
     return [
       'Home',
       'Workplace',
-      'Other',
-    ];
+         ];
   }
 
   Future<ApiResponse> getAddressFromGeocode(LatLng latLng) async {

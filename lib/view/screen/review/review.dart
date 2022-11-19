@@ -83,7 +83,7 @@ class _ReviewListState extends State<ReviewList> {
                               reviewProvider.reviews[index].images.isNotEmpty
                                   ? reviewProvider
                                       .reviews[index].images.first.image
-                                  : 'https://www.uhonline.hawaii.edu/uhoic/wp-content/plugins/elementor/assets/images/placeholder.png',
+                                  : 'assets/images/placeholder.png',
                             ),
                           ),
                         ),

@@ -19,6 +19,7 @@ class GeneralsurveyModel {
       this.images,
       this.city,
       this.district,
+      this.state,
       this.userId,
       this.userName,
       this.address});
@@ -30,8 +31,10 @@ class GeneralsurveyModel {
   final int userId;
   final String userName;
   final String district;
+  final String state;
   final String city;
   final String address;
+
 
   factory GeneralsurveyModel.fromJson(Map<String, dynamic> json) =>
       GeneralsurveyModel(
@@ -42,6 +45,7 @@ class GeneralsurveyModel {
         userName: json["user_name"],
         address: json["address"],
         district: json["district"],
+        state: json["state"],
         city: json["city"],
         images: List<Image>.from(json["images"].map((x) => Image.fromJson(x))),
       );
@@ -54,6 +58,7 @@ class GeneralsurveyModel {
         "user_name": userName,
         "address": address,
         "district": district,
+        "state": state,
         "city": city,
         "images": List<dynamic>.from(images.map((x) => x.toJson())),
       };

@@ -47,28 +47,26 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
 
   @override
   void initState() {
-    super.initState();
-    if(widget.isBilling){
+    //super.initState();
+    //if(widget.isBilling){
+      //_address = Address.billing;
+    //}else{
       _address = Address.billing;
-    }else{
-      _address = Address.shipping;
-    }
+    //}
 
-    //Provider.of<LocationProvider>(context, listen: false).initializeAllAddressType(context: context);
-    //Provider.of<LocationProvider>(context, listen: false).updateAddressStatusMessae(message: '');
-    //Provider.of<LocationProvider>(context, listen: false).updateErrorMessage(message: '');
-    //_checkPermission(() => Provider.of<LocationProvider>(context, listen: false).getCurrentLocation(context, true, mapController: _controller),context);
+    Provider.of<LocationProvider>(context, listen: false).initializeAllAddressType(context: context);
+    Provider.of<LocationProvider>(context, listen: false).updateAddressStatusMessae(message: '');
+    Provider.of<LocationProvider>(context, listen: false).updateErrorMessage(message: '');
+    _checkPermission(() => Provider.of<LocationProvider>(context, listen: false).getCurrentLocation(context, true, mapController: _controller),context);
     if (widget.isEnableUpdate && widget.address != null) {
       _updateAddress = false;
-      /*Provider.of<LocationProvider>(context, listen: false).updatePosition(CameraPosition(target: LatLng(double.parse(widget.address.latitude), double.parse(widget.address.longitude))), true, widget.address.address, context);
+      Provider.of<LocationProvider>(context, listen: false).updatePosition(CameraPosition(target: LatLng(double.parse(widget.address.latitude), double.parse(widget.address.longitude))), true, widget.address.address, context);
       _contactPersonNameController.text = '${widget.address.contactPersonName}';
-      _contactPersonNumberController.text = '${widget.address.phone}';*/
+      _contactPersonNumberController.text = '${widget.address.phone}';
       if (widget.address.addressType == 'Home') {
         Provider.of<LocationProvider>(context, listen: false).updateAddressIndex(0, false);
-      } else if (widget.address.addressType == 'Workplace') {
+            } else {
         Provider.of<LocationProvider>(context, listen: false).updateAddressIndex(1, false);
-      } else {
-        Provider.of<LocationProvider>(context, listen: false).updateAddressIndex(2, false);
       }
     }else {
       if(Provider.of<ProfileProvider>(context, listen: false).userInfoModel!=null){
@@ -216,16 +214,6 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
                                   ),
 
 
-                                  // for label us
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(vertical: Dimensions.PADDING_SIZE_EXTRA_EXTRA_SMALL),
-                                    child: Text(
-                                      getTranslated('label_us', context),
-                                      style:
-                                      Theme.of(context).textTheme.headline3.copyWith(color: ColorResources.getHint(context), fontSize: Dimensions.FONT_SIZE_LARGE),
-                                    ),
-                                  ),
-
                                   Container(
                                     height: 50,
                                     child: ListView.builder(
@@ -260,43 +248,6 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
                                     ),
                                   ),
 
-
-                                  /*Container(height: 50,
-                                    child: Row(children: <Widget>[
-                                      Row(
-                                        children: [
-                                          Radio<Address>(
-                                            value: Address.shipping,
-                                            groupValue: _address,
-                                            onChanged: (Address value) {
-                                              setState(() {
-                                                _address = value;
-                                              });
-                                            },
-                                          ),
-                                          Text(getTranslated('billing_address', context)),
-
-                                        ],
-                                    ),
-                                      Row(
-                                        children: [
-                                          Radio<Address>(
-                                            value: Address.billing,
-                                            groupValue: _address,
-                                            onChanged: (Address value) {
-                                              setState(() {
-                                                _address = value;
-                                              });
-                                            },
-                                          ),
-                                          Text(getTranslated('shipping_address', context)),
-
-
-                                        ],
-                                    ),
-                                ],
-                              ),
-                                  ),*/
 
                                   Padding(
                                     padding: const EdgeInsets.only(top: 5,),
@@ -428,34 +379,7 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
                             ),
                           ),
                         ),
-                        // locationProvider.addressStatusMessage != null
-                        //     ? Row(
-                        //   crossAxisAlignment: CrossAxisAlignment.start,
-                        //   children: [
-                        //     locationProvider.addressStatusMessage.length > 0 ? CircleAvatar(backgroundColor: Colors.green, radius: 5) : SizedBox.shrink(),
-                        //     SizedBox(width: 8),
-                        //     Expanded(
-                        //       child: Text(locationProvider.addressStatusMessage ?? "",
-                        //         style: Theme.of(context).textTheme.headline2.copyWith(fontSize: Dimensions.FONT_SIZE_SMALL, color: Colors.green, height: 1),
-                        //       ),
-                        //     )
-                        //   ],
-                        // )
-                        //     : Row(crossAxisAlignment: CrossAxisAlignment.start,
-                        //       children: [
-                        //         locationProvider.errorMessage.length > 0
-                        //         ? CircleAvatar(backgroundColor: Theme.of(context).primaryColor, radius: 5) : SizedBox.shrink(),
-                        //        SizedBox(width: 8),
-                        //        Expanded(
-                        //       child: Text(locationProvider.errorMessage ?? "",
-                        //         style: Theme.of(context).textTheme.headline2.copyWith(fontSize: Dimensions.FONT_SIZE_SMALL, color: Theme.of(context).primaryColor, height: 1),
-                        //       ),
-                        //     )
-                        //   ],
-                        // ),
-
-
-                      ],
+                        ],
                     ),
                   );
                 },
