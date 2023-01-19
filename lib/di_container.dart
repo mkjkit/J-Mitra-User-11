@@ -123,7 +123,7 @@ Future<void> init() async {
   sl.registerFactory(() => ThemeProvider(sharedPreferences: sl()));
   sl.registerFactory(() => GoogleSignInProvider());
   sl.registerFactory(() => FacebookLoginProvider());
-  sl.registerFactory(() => LocationProvider(sharedPreferences: sl(), locationRepo: sl()));
+  sl.registerFactory(() => LocationProvider(sharedPreferences: sl(), locationRepo: sl(), dioClient: sl()));
   sl.registerFactory(() => WalletTransactionProvider(transactionRepo: sl()));
   sl.registerFactory(() => ReviewProvider(sl()));
   sl.registerFactory(() => ViewProvider(sl()));

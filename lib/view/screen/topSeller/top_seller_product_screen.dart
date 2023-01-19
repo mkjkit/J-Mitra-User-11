@@ -18,8 +18,10 @@ import 'package:com.jewelmitra.jewel_mitra/view/basewidget/animated_custom_dialo
 import 'package:com.jewelmitra.jewel_mitra/view/basewidget/custom_app_bar.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/basewidget/guest_dialog.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/basewidget/rating_bar.dart';
+
 //import 'package:com.jewelmitra.jewel_mitra/view/basewidget/search_widget.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/screen/chat/top_seller_chat_screen.dart';
+
 //import 'package:com.jewelmitra.jewel_mitra/view/screen/home/widget/products_view.dart';
 //import 'package:com.jewelmitra.jewel_mitra/provider/seller_cat_provider.dart';
 import 'package:com.jewelmitra.jewel_mitra/provider/catalogue_provider.dart';
@@ -30,8 +32,6 @@ import 'package:com.jewelmitra.jewel_mitra/provider/pdf_api.dart';
 import 'package:com.jewelmitra.jewel_mitra/view/basewidget/button/button_widget.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
-
 
 class TopSellerProductScreen extends StatefulWidget {
   final TopSellerModel topSeller;
@@ -71,11 +71,14 @@ class _TopSellerProductScreenState extends State<TopSellerProductScreen> {
             child: ListView(
               controller: _scrollController,
               physics: BouncingScrollPhysics(),
-              padding: EdgeInsets.all(0),
               children: [
                 // Banner
-                Padding(
-                  padding: EdgeInsets.all(Dimensions.PADDING_SIZE_SMALL),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Colors.grey.shade400, width: 2),
+                  ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: FadeInImage.assetNetwork(
@@ -91,219 +94,199 @@ class _TopSellerProductScreenState extends State<TopSellerProductScreen> {
                     ),
                   ),
                 ),
-
                 Container(
-                  padding: EdgeInsets.all(Dimensions.PADDING_SIZE_SMALL),
-                  child: Column(children: [
-                    // Seller Info
-                    Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Theme.of(context).highlightColor,
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.grey.withOpacity(0.3),
-                                      spreadRadius: 1,
-                                      blurRadius: 5)
-                                ]),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(
-                                  Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                              child: FadeInImage.assetNetwork(
-                                placeholder: Images.placeholder,
-                                height: 80,
-                                width: 80,
-                                fit: BoxFit.cover,
-                                image:
-                                    '${Provider.of<SplashProvider>(context, listen: false).baseUrls.shopImageUrl}/${widget.topSeller.image}',
-                                imageErrorBuilder: (c, o, s) => Image.asset(
-                                    Images.placeholder,
-                                    height: 80,
-                                    width: 80,
-                                    fit: BoxFit.cover),
-                              ),
+                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  padding: EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Colors.grey.shade400, width: 2),
+                  ),
+                  child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Theme.of(context).highlightColor,
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.grey.withOpacity(0.3),
+                                    spreadRadius: 1,
+                                    blurRadius: 5)
+                              ]),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: FadeInImage.assetNetwork(
+                              placeholder: Images.placeholder,
+                              height: 80,
+                              width: 80,
+                              fit: BoxFit.cover,
+                              image:
+                                  '${Provider.of<SplashProvider>(context, listen: false).baseUrls.shopImageUrl}/${widget.topSeller.image}',
+                              imageErrorBuilder: (c, o, s) => Image.asset(
+                                  Images.placeholder,
+                                  height: 80,
+                                  width: 80,
+                                  fit: BoxFit.cover),
                             ),
                           ),
-                          SizedBox(width: Dimensions.PADDING_SIZE_SMALL),
-                          Expanded(
-                            child: Consumer<SellerProvider>(
-                                builder: (context, sellerProvider, _) {
-                              String ratting = sellerProvider.sellerModel !=
-                                          null &&
-                                      sellerProvider.sellerModel.avgRating !=
-                                          null
-                                  ? sellerProvider.sellerModel.avgRating
-                                      .toString()
-                                  : "0";
+                        ),
+                        SizedBox(width: Dimensions.PADDING_SIZE_SMALL),
+                        Expanded(
+                          child: Consumer<SellerProvider>(
+                              builder: (context, sellerProvider, _) {
+                            String ratting = sellerProvider.sellerModel !=
+                                        null &&
+                                    sellerProvider.sellerModel.avgRating !=
+                                        null
+                                ? sellerProvider.sellerModel.avgRating
+                                    .toString()
+                                : "0";
 
-                              return Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          widget.topSeller.name,
-                                          style: titilliumSemiBold.copyWith(
-                                              fontSize:
-                                                  Dimensions.FONT_SIZE_LARGE),
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: Text(
+                                        widget.topSeller.name,
+                                        style: titilliumSemiBold.copyWith(
+                                            fontSize:
+                                                Dimensions.FONT_SIZE_LARGE),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
                                       ),
-                                      InkWell(
-                                        onTap: () {
-                                          if (!Provider.of<AuthProvider>(
-                                                  context,
-                                                  listen: false)
-                                              .isLoggedIn()) {
-                                            showAnimatedDialog(
-                                                context, GuestDialog(),
-                                                isFlip: true);
-                                          } else if (widget.topSeller != null) {
-                                            Navigator.push(
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        if (!Provider.of<AuthProvider>(
                                                 context,
-                                                MaterialPageRoute(
-                                                    builder: (_) =>
-                                                        TopSellerChatScreen(
-                                                            topSeller: widget.topSeller)));
-                                          }
-                                        },
-
-                                        child: Image.asset(Images.chat_image,
-                                            height:Dimensions.ICON_SIZE_DEFAULT),
-
-                                      ),
-                                    ],
-                                  ),
-                                  sellerProvider.sellerModel != null
-                                      ? Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                RatingBar(
-                                                    rating:
-                                                        double.parse(ratting)),
-                                                Text(
-                                                  '(${sellerProvider.sellerModel.totalReview.toString()})',
-                                                  style: titilliumRegular
-                                                      .copyWith(),
-                                                  maxLines: 1,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                ),
-                                              ],
-                                            ),
-                                            SizedBox(
-                                                height: Dimensions
-                                                    .PADDING_SIZE_SMALL),
-                                            Row(
-                                              children: [
-                                                Text(
-                                                  sellerProvider.sellerModel
-                                                          .totalReview
-                                                          .toString() +
-                                                      ' ' +
-                                                      '${getTranslated('reviews', context)}',
-                                                  style: titleRegular.copyWith(
-                                                      fontSize: Dimensions
-                                                          .FONT_SIZE_LARGE,
-                                                      color: ColorResources
-                                                          .getReviewRattingColor(
-                                                              context)),
-                                                  maxLines: 1,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                ),
-                                                SizedBox(
-                                                    width: Dimensions
-                                                        .PADDING_SIZE_DEFAULT),
-                                                Text('|'),
-                                                SizedBox(
-                                                    width: Dimensions
-                                                        .PADDING_SIZE_DEFAULT),
-                                                Text(
-                                                  sellerProvider.sellerModel
-                                                          .totalProduct
-                                                          .toString() +
-                                                      ' ' +
-                                                      '${getTranslated('products', context)}',
-                                                  style: titleRegular.copyWith(
-                                                      fontSize: Dimensions
-                                                          .FONT_SIZE_LARGE,
-                                                      color: ColorResources
-                                                          .getReviewRattingColor(
-                                                              context)),
-                                                  maxLines: 1,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        )
-                                      : SizedBox(),
-
-                                ],
-                              );
-                            }),
-                          ),
-                        ]),
-                  ]),
+                                                listen: false)
+                                            .isLoggedIn()) {
+                                          showAnimatedDialog(
+                                              context, GuestDialog(),
+                                              isFlip: true);
+                                        } else if (widget.topSeller != null) {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (_) =>
+                                                      TopSellerChatScreen(
+                                                          topSeller: widget
+                                                              .topSeller)));
+                                        }
+                                      },
+                                      child: Image.asset(Images.chat_image,
+                                          height:
+                                              Dimensions.ICON_SIZE_DEFAULT),
+                                    ),
+                                  ],
+                                ),
+                                sellerProvider.sellerModel != null
+                                    ? Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              RatingBar(
+                                                  rating:
+                                                      double.parse(ratting)),
+                                              Text(
+                                                '(${sellerProvider.sellerModel.totalReview.toString()})',
+                                                style: titilliumRegular
+                                                    .copyWith(),
+                                                maxLines: 1,
+                                                overflow:
+                                                    TextOverflow.ellipsis,
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(
+                                              height: Dimensions
+                                                  .PADDING_SIZE_SMALL),
+                                          Row(
+                                            children: [
+                                              Text(
+                                                sellerProvider.sellerModel
+                                                        .totalReview
+                                                        .toString() +
+                                                    ' ' +
+                                                    '${getTranslated('reviews', context)}',
+                                                style: titleRegular.copyWith(
+                                                    fontSize: Dimensions
+                                                        .FONT_SIZE_LARGE,
+                                                    color: ColorResources
+                                                        .getReviewRattingColor(
+                                                            context)),
+                                                maxLines: 1,
+                                                overflow:
+                                                    TextOverflow.ellipsis,
+                                              ),
+                                              SizedBox(
+                                                  width: Dimensions
+                                                      .PADDING_SIZE_DEFAULT),
+                                              Text('|'),
+                                              SizedBox(
+                                                  width: Dimensions
+                                                      .PADDING_SIZE_DEFAULT),
+                                              Text(
+                                                sellerProvider.sellerModel
+                                                        .totalProduct
+                                                        .toString() +
+                                                    ' ' +
+                                                    '${getTranslated('products', context)}',
+                                                style: titleRegular.copyWith(
+                                                    fontSize: Dimensions
+                                                        .FONT_SIZE_LARGE,
+                                                    color: ColorResources
+                                                        .getReviewRattingColor(
+                                                            context)),
+                                                maxLines: 1,
+                                                overflow:
+                                                    TextOverflow.ellipsis,
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      )
+                                    : SizedBox(),
+                              ],
+                            );
+                          }),
+                        ),
+                      ]),
                 ),
-                Container(
-                  color: Theme.of(context).highlightColor,
-                  padding: EdgeInsets.all(Dimensions.PADDING_SIZE_SMALL),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-
-                      Center(
-                          child: SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton(
-                                onPressed: () async {
-                                  // popAddProfile();
-                                  // Downaload the file in Phone memory-------------------------------------------------->/
-                                  //CatalogueProvider.downloadCatalogue(
-                                  //widget.topSeller.catalogue, context);
-                                  //final file = await PDFApi.loadNetwork(widget.topSeller.catalogue);
-                                  //CatalogueProvider.openPDF(context, file);
-                                  //Use the openFile package to open the any file ------------------------------------>/
-                                  CatalogueProvider.openFile(
-                                      url: widget.topSeller.catalogue);
-                                },
-                                child: Text(
-                                  getTranslated('view_catalogue', context),
-                                )),
-                          )
-
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      ],
+                InkWell(
+                  onTap: () async {
+                    CatalogueProvider.openFile(url: widget.topSeller.catalogue);
+                  },
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 10),
+                    alignment: Alignment.center,
+                    height: 45,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.blue,
+                        border: Border.all(color: Colors.grey.shade400)),
+                    child: Text(
+                      getTranslated('view_catalogue', context),
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white),
+                    ),
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 22.0),
-                  padding:
-                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
+                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  padding: const EdgeInsets.all(8),
                   width: double.infinity,
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.black),
-                    borderRadius: BorderRadius.circular(4),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-
                       RichText(
                         text: TextSpan(
                           style: TextStyle(color: Colors.black),
@@ -344,28 +327,6 @@ class _TopSellerProductScreenState extends State<TopSellerProductScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 30,
-                ),
-                /*SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
-
-                Center(
-                  child: Padding(
-                    padding:  EdgeInsets.only(left: Dimensions.PADDING_SIZE_SMALL, right: Dimensions.PADDING_SIZE_EXTRA_EXTRA_SMALL),
-                    child: SearchWidget(
-                      hintText: 'Search product...',
-                      onTextChanged: (String newText) => Provider.of<ProductProvider>(context, listen: false).filterData(newText),
-                      onClearPressed: () {},
-                      isSeller: true,
-                    ),
-                  ),
-                ),
-
-                Padding(
-                  padding: EdgeInsets.all(Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                  child: ProductView(isHomePage: false, productType: ProductType.SELLER_PRODUCT,
-                      scrollController: _scrollController, sellerId: widget.topSeller.id.toString()),
-                ), */
               ],
             ),
           ),
@@ -373,4 +334,4 @@ class _TopSellerProductScreenState extends State<TopSellerProductScreen> {
       ),
     );
   }
-  }
+}

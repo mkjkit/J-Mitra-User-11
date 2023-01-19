@@ -48,7 +48,7 @@ class MessageBubble extends StatelessWidget {
                   fontSize: 8,
                   color: ColorResources.getHint(context),
                 )) : SizedBox.shrink(),
-                chat.message.isNotEmpty ? Text(chat.message, textAlign: TextAlign.justify,style: titilliumRegular.copyWith(fontSize: Dimensions.FONT_SIZE_SMALL)) : SizedBox.shrink(),
+                chat.message.isNotEmpty ? Text(chat.message, textAlign: TextAlign.justify,style: titilliumRegular.copyWith(fontSize: Dimensions.FONT_SIZE_DEFAULT)) : SizedBox.shrink(),
                 //chat.image != null ? Image.file(chat.image) : SizedBox.shrink(),
               ]),
           ),

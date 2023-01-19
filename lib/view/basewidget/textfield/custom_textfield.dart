@@ -24,6 +24,7 @@ class CustomTextField extends StatelessWidget {
   final Color fillColor;
   final TextCapitalization capitalization;
   final bool isBorder;
+  final bool isReadOnly;
 
   CustomTextField(
       {this.controller,
@@ -39,6 +40,7 @@ class CustomTextField extends StatelessWidget {
       this.capitalization = TextCapitalization.none,
       this.fillColor,
       this.isBorder = false,
+        this.isReadOnly = false,
       });
 
   @override
@@ -64,6 +66,7 @@ class CustomTextField extends StatelessWidget {
         //keyboardType: TextInputType.number,
         initialValue: null,
         textInputAction: textInputAction ?? TextInputAction.next,
+        readOnly: isReadOnly,
         onFieldSubmitted: (v) {
           FocusScope.of(context).requestFocus(nextNode);
         },

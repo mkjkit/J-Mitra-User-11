@@ -58,6 +58,7 @@ dependencies:
   permission_handler: ^9.2.0
   push: ^0.1.3
   open_filex: ^4.2.2
+  cached_network_image: any
 
 
 

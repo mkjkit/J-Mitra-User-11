@@ -408,7 +408,9 @@
   "matrimonial":"Matrimonial",
   "relative_error":"Please provide proper relative details!",
   "biodata_error":"Please upload biodata!",
-  "download_biodata":"Download Biodata"
+  "download_biodata":"Download Biodata",
+  "district":"District",
+  "state":"State"
 
 
 }

@@ -416,6 +416,8 @@
   "theft_reported_person": "User Details with Thief image",
   "view_catalogue": "View Catalogue",
   "upload_profile_image": "Upload Profile Image",
-  "write_some_details_here": "Write Some Details about Theft"
+  "write_some_details_here": "Write Some Details about Theft",
+  "district": "District",
+  "state": "State"
 
 }

@@ -28,6 +28,8 @@ class ViewProvider extends ChangeNotifier {
 
   bool _isLoading = false;
   bool _isFilter = false;
+  bool isMaleFilter = false;
+  bool isFemaleFilter = false;
   RangeValues _ageFilter = RangeValues(18.0, 30.0);
   RangeValues _heightFilter = RangeValues(5.0, 6.0);
   String _genderFilter = '';
@@ -115,8 +117,7 @@ class ViewProvider extends ChangeNotifier {
   }
 
   void updateAgeFilter(RangeValues value) {
-    _ageFilter =
-        RangeValues(value.start.ceilToDouble(), value.end.ceilToDouble());
+    _ageFilter = RangeValues(value.start.ceilToDouble(), value.end.ceilToDouble());
     notifyListeners();
   }
 
@@ -128,6 +129,7 @@ class ViewProvider extends ChangeNotifier {
 
   void updateGenderFilter(String val) {
     _genderFilter = val;
+    print('_genderFilter--->'+_genderFilter.toString());
     notifyListeners();
   }
 

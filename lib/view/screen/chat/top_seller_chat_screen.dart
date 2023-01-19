@@ -140,6 +140,7 @@ class TopSellerChatScreen extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 20,)
 
           ],
         ),

@@ -41,8 +41,8 @@ class ReviewOverview extends StatelessWidget {
                       width: size.width * 0.9,
                       margin: EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(4),
-                        border: Border.all(color: Colors.white, width: 5),
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: Colors.grey.shade400, width: 2),
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: NetworkImage(review.images[index].image),

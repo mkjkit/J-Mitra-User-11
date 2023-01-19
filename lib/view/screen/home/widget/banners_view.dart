@@ -74,7 +74,7 @@ class BannersView extends StatelessWidget {
                 children: [
                   CarouselSlider.builder(
                     options: CarouselOptions(
-                      viewportFraction: 1,
+                      viewportFraction: 0.8,
                       autoPlay: true,
                       enlargeCenterPage: true,
                       disableCenter: true,
@@ -120,7 +120,7 @@ class BannersView extends StatelessWidget {
                         return TabPageSelectorIndicator(
                           backgroundColor: index == bannerProvider.currentIndex ? Theme.of(context).primaryColor : Colors.grey,
                           borderColor: index == bannerProvider.currentIndex ? Theme.of(context).primaryColor : Colors.grey,
-                          size: 10,
+                          size: 8,
                         );
                       }).toList(),
                     ),

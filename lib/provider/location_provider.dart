@@ -1,4 +1,7 @@
 import 'dart:convert';
+import 'dart:developer';
+import 'package:com.jewelmitra.jewel_mitra/data/datasource/remote/dio/dio_client.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:com.jewelmitra.jewel_mitra/data/model/response/address_model.dart';
 import 'package:com.jewelmitra.jewel_mitra/data/model/response/base/api_response.dart';
@@ -13,11 +16,14 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:google_maps_webservice/places.dart';
 
+import '../data/model/response/pincode_model.dart';
+
 class LocationProvider with ChangeNotifier {
+  final DioClient dioClient;
   final SharedPreferences sharedPreferences;
   final LocationRepo locationRepo;
 
-  LocationProvider({@required this.sharedPreferences, this.locationRepo});
+  LocationProvider({@required this.sharedPreferences, this.locationRepo, this.dioClient});
 
   Position _position = Position(longitude: 0,
       latitude: 0,
@@ -68,8 +74,94 @@ class LocationProvider with ChangeNotifier {
 
   GoogleMapController get mapController => _mapController;
 
+  List districtList = [];
+
+  List _filteredState = [];
+  List _districtState = [];
+  Pincodes _pincodes = null;
+  Pincodes get pincodes => _pincodes;
+  TextEditingController districtController = TextEditingController();
+  TextEditingController stateController = TextEditingController();
+  int _selectedRelativeIndexForState = 0;
+  int _selectedRelativeIndexForDistrict = 0;
+  int get selectedRelativeIndexForState => _selectedRelativeIndexForState;
+  int get selectedRelativeIndexForDistrict => _selectedRelativeIndexForDistrict;
+  List get filteredState => _filteredState;
+  List get filteredDistrict => _districtState;
+  List<Map<String, dynamic>> relatives = [
+    {
+      "name": "",
+      "relation": "",
+      "address": "",
+      "pin": TextEditingController(),
+      "focus_node": FocusNode(),
+      "layer_link": LayerLink()
+    }
+  ];
+
+
   void setLocationController(String text) {
     _locationController.text = text;
+  }
+
+  void getPinCode() async {
+    try {
+      _isLoading = true;
+      notifyListeners();
+      final Response response = await dioClient
+          .get('${AppConstants.PIN_CODE}')
+          .catchError((e) => print(e.response.toString()));
+      if (response.data != null && response.statusCode == 200) {
+        _pincodes = Pincodes.fromJson(response.data);
+      }
+      _isLoading = false;
+      notifyListeners();
+    } catch (e) {
+      print(e);
+      _isLoading = false;
+      notifyListeners();
+    }
+  }
+
+  void updateRelative(int index, String key, String value) {
+    if (key == 'pin') {
+      relatives[index][key].text = value;
+    } else {
+      relatives[index][key] = value.toString();
+    }
+    notifyListeners();
+  }
+
+  void filterState({TextEditingController controller, String text}) {
+    if (controller != null) {
+      _filteredState.clear();
+      var res = pincodes.data.where(
+              (element) => element.stateId.toString().startsWith(controller.text));
+      log('res--->'+res.toString());
+      _filteredState.addAll(res);
+    } else {
+      _filteredState.clear();
+      var res = pincodes.data
+          .where((element) => element.stateId.toString().startsWith(text));
+      _filteredState.addAll(res);
+    }
+    notifyListeners();
+  }
+
+  void filterDistrict({TextEditingController controller, String text}) {
+    if (controller != null) {
+      _districtState.clear();
+      var  res = pincodes.data.where(
+              (element) => element.district.toLowerCase().startsWith(controller.text.toLowerCase()));
+      log('res--->'+res.toString());
+      _districtState.addAll(res);
+    } else {
+      _districtState.clear();
+      var res = pincodes.data
+          .where((element) => element.district.toString().startsWith(text));
+      _districtState.addAll(res);
+    }
+    notifyListeners();
   }
 
 
@@ -229,6 +321,7 @@ class LocationProvider with ChangeNotifier {
       apiResponse.response.data.forEach((address) =>
           _addressList.add(AddressModel.fromJson(address)));
       _responseModel = ResponseModel('successful', true);
+      log('apiResponse---->'+apiResponse.response.toString());
     } else {
       ApiChecker.checkApi(context, apiResponse);
     }
@@ -256,6 +349,7 @@ class LocationProvider with ChangeNotifier {
 
   Future<ResponseModel> addAddress(AddressModel addressModel,
       BuildContext context) async {
+    log('----addAddress----');
     _isLoading = true;
     notifyListeners();
     _errorMessage = '';
@@ -290,6 +384,7 @@ class LocationProvider with ChangeNotifier {
   // for address update screen
   Future<ResponseModel> updateAddress(BuildContext context,
       {AddressModel addressModel, int addressId}) async {
+    print('----updateAddress----');
     _isLoading = true;
     notifyListeners();
     _errorMessage = '';

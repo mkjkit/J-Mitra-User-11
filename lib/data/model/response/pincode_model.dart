@@ -2,6 +2,8 @@
 //
 //     final pincodes = pincodesFromJson(jsonString);
 
+import 'dart:developer';
+
 import 'package:meta/meta.dart';
 import 'dart:convert';
 
@@ -42,16 +44,20 @@ class Datum {
   });
 
   final int pincodeId;
-  final int stateId;
+  int stateId;
   final int pincode;
   final String district;
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
-        pincodeId: json["pincode_id"],
-        stateId: json["state_id"],
-        pincode: json["pincode"],
-        district: json["district"],
-      );
+  factory Datum.fromJson(Map<String, dynamic> json) {
+    // log('state_id--->'+json["state_id"].toString());
+    // log('district--->'+json["district"].toString());
+    return Datum(
+      pincodeId: json["pincode_id"],
+      stateId: json["state_id"],
+      pincode: json["pincode"],
+      district: json["district"],
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         "pincode_id": pincodeId,

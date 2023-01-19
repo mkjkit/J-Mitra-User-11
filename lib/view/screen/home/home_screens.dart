@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:com.jewelmitra.jewel_mitra/helper/product_type.dart';
@@ -106,6 +107,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     print('======>Single vendor active=======>$singleVendor');
     List<String> types = [
       getTranslated('new_arrival', context),
@@ -139,62 +141,7 @@ class _HomePageState extends State<HomePage> {
                     automaticallyImplyLeading: false,
                     backgroundColor: Theme.of(context).highlightColor,
                     title: Image.asset(Images.logo_with_name_image, height: 35),
-                    actions: [
-                      /*IconButton(
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => CartScreen()));
-                        },
-                        icon: Stack(clipBehavior: Clip.none, children: [
-                          Image.asset(
-                            Images.cart_arrow_down_image,
-                            height: Dimensions.ICON_SIZE_DEFAULT,
-                            width: Dimensions.ICON_SIZE_DEFAULT,
-                            color: ColorResources.getPrimary(context),
-                          ),
-                          Positioned(
-                            top: -4,
-                            right: -4,
-                            child: Consumer<CartProvider>(
-                                builder: (context, cart, child) {
-                                  return CircleAvatar(
-                                    radius: 7,
-                                    backgroundColor: ColorResources.RED,
-                                    child: Text(cart.cartList.length.toString(),
-                                        style: titilliumSemiBold.copyWith(
-                                          color: ColorResources.WHITE,
-                                          fontSize:
-                                          Dimensions.FONT_SIZE_EXTRA_SMALL,
-                                        )),
-                                  );
-                                }),
-                          ),
-                        ]),
-                      ),*/
-                    ],
                   ),
-
-                  // Search Button
-                  // comment start
-                  // SliverPersistentHeader(
-                  //     pinned: true,
-                  //     delegate: SliverDelegate(
-                  //         child: InkWell(
-                  //       onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => SearchScreen())),
-                  //           child: Container(padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_SMALL, vertical: 2),
-                  //             color: Theme.of(context).highlightColor,
-                  //             alignment: Alignment.center,
-                  //             child: Container(padding: EdgeInsets.all(Dimensions.PADDING_SIZE_SMALL), height: 50, alignment: Alignment.centerLeft,
-                  //               decoration: BoxDecoration(color: ColorResources.getGrey(context), borderRadius: BorderRadius.circular(
-                  //                 Dimensions.PADDING_SIZE_SMALL),),
-                  //               child: Row(children: [Icon(Icons.search, color: ColorResources.getPrimary(context), size: Dimensions.ICON_SIZE_LARGE),
-                  //                 SizedBox(width: 5),
-                  //                 Text(getTranslated('SEARCH_HINT', context), style: robotoRegular.copyWith(color: Theme.of(context).hintColor)),
-                  //           ]),
-                  //         ),
-                  //       ),
-                  //     ))),
-                  // comment end
                   SliverToBoxAdapter(
                     child: Column(
                       children: [
@@ -203,37 +150,13 @@ class _HomePageState extends State<HomePage> {
                               top: Dimensions.PADDING_SIZE_EXTRA_SMALL),
                           child: BannersView(),
                         ),
-                        // comment start
-                        // Category title
-                        // Padding(
-                        //   padding: EdgeInsets.fromLTRB(
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                        //   child: TitleRow(
-                        //       title: getTranslated('CATEGORY', context),
-                        //       onTap: () {
-                        //         Navigator.push(
-                        //             context,
-                        //             MaterialPageRoute(
-                        //                 builder: (_) => AllCategoryScreen()));
-                        //       }),
-                        // ),
-
-                        // //category
-                        // Padding(
-                        //   padding: EdgeInsets.symmetric(
-                        //       horizontal: Dimensions.PADDING_SIZE_SMALL),
-                        //   child: CategoryView(isHomePage: true),
-                        // ),
-                        // comment end
+                        SizedBox(height: 8),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            SizedBox(
+                            Container(
                               height: 150,
-                              width: 150,
+                              width: size.width / 2.15,
                               child: InkWell(
                                 onTap: () {
                                   Navigator.push(
@@ -244,6 +167,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Container(
                                   margin: EdgeInsets.all(3),
                                   decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.grey.shade400),
                                     borderRadius: BorderRadius.circular(
                                         Dimensions.PADDING_SIZE_SMALL),
                                     color: Theme.of(context).highlightColor,
@@ -258,70 +182,69 @@ class _HomePageState extends State<HomePage> {
                                     ],
                                   ),
                                   child: Column(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
                                       children: [
-                                        Expanded(
-                                          flex: 7,
-                                          child: Padding(
-                                            padding: EdgeInsets.all(Dimensions
-                                                .PADDING_SIZE_SMALL),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                              BorderRadius.vertical(
-                                                  top: Radius.circular(10)),
-                                              child: Image(
-                                                errorBuilder: (context, error,
-                                                    stackTrace) {
-                                                  return Image.asset(
-                                                      Images.placeholder);
-                                                },
-                                                image: NetworkImage(
-                                                    '${AppConstants.BASE_URL}/storage/app/public/self/matrimonial.png'),
+                                        Container(
+                                          height: 100,
+                                          width: size.width / 2.15,
+                                          child: ClipRRect(
+                                            borderRadius:
+                                            BorderRadius.vertical(
+                                                top: Radius.circular(10)),
+                                            child: CachedNetworkImage(
+                                              fit: BoxFit.contain,
+                                              imageUrl: "${AppConstants.BASE_URL}/storage/app/public/self/matrimonial.png",
+                                              imageBuilder: (context, imageProvider) => Container(
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: imageProvider,
+                                                      fit: BoxFit.cover,
+                                                      colorFilter:
+                                                      ColorFilter.mode(Colors.red, BlendMode.colorBurn)),
+                                                ),
+                                              ),
+                                            )
+                                          ),
+                                        ),
+                                        Spacer(),
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            color: ColorResources.getTextBg(
+                                                context),
+                                            borderRadius: BorderRadius.only(
+                                                bottomLeft:
+                                                Radius.circular(10),
+                                                bottomRight:
+                                                Radius.circular(10)),
+                                          ),
+                                          child: Center(
+                                            child: Padding(
+                                              padding: const EdgeInsets
+                                                  .symmetric(
+                                                  horizontal: Dimensions
+                                                      .PADDING_SIZE_EXTRA_SMALL),
+                                              child: Text(
+                                                getTranslated(
+                                                    'matrimonial', context),
+                                                textAlign: TextAlign.center,
+                                                maxLines: 1,
+                                                overflow:
+                                                TextOverflow.ellipsis,
+                                                style: titilliumSemiBold
+                                                    .copyWith(
+                                                    fontSize: Dimensions
+                                                        .FONT_SIZE_LARGE),
                                               ),
                                             ),
                                           ),
                                         ),
-                                        Expanded(
-                                            flex: 3,
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                color: ColorResources.getTextBg(
-                                                    context),
-                                                borderRadius: BorderRadius.only(
-                                                    bottomLeft:
-                                                    Radius.circular(10),
-                                                    bottomRight:
-                                                    Radius.circular(10)),
-                                              ),
-                                              child: Center(
-                                                child: Padding(
-                                                  padding: const EdgeInsets
-                                                      .symmetric(
-                                                      horizontal: Dimensions
-                                                          .PADDING_SIZE_EXTRA_SMALL),
-                                                  child: Text(
-                                                    getTranslated(
-                                                        'matrimonial', context),
-                                                    textAlign: TextAlign.center,
-                                                    maxLines: 1,
-                                                    overflow:
-                                                    TextOverflow.ellipsis,
-                                                    style: titilliumSemiBold
-                                                        .copyWith(
-                                                        fontSize: Dimensions
-                                                            .FONT_SIZE_LARGE),
-                                                  ),
-                                                ),
-                                              ),
-                                            )),
+                                        Spacer()
                                       ]),
                                 ),
                               ),
                             ),
                             SizedBox(
                               height: 150,
-                              width: 150,
+                              width: size.width / 2.15,
                               child: InkWell(
                                 onTap: () {
                                   Navigator.push(
@@ -332,6 +255,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Container(
                                   margin: EdgeInsets.all(3),
                                   decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.grey.shade400),
                                     borderRadius: BorderRadius.circular(
                                         Dimensions.PADDING_SIZE_SMALL),
                                     color: Theme.of(context).highlightColor,
@@ -349,270 +273,67 @@ class _HomePageState extends State<HomePage> {
                                       crossAxisAlignment:
                                       CrossAxisAlignment.stretch,
                                       children: [
-                                        Expanded(
-                                          flex: 7,
-                                          child: Padding(
-                                            padding: EdgeInsets.all(Dimensions
-                                                .PADDING_SIZE_SMALL),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                              BorderRadius.vertical(
-                                                  top: Radius.circular(10)),
-                                              child: Image(
-                                                errorBuilder: (context, error,
-                                                    stackTrace) {
-                                                  return Image.asset(
-                                                      Images.placeholder);
-                                                },
-                                                image: NetworkImage(
-                                                    '${AppConstants.BASE_URL}/storage/app/public/self/survey.png'),
+                                        Container(
+                                          height: 100,
+                                          width: size.width / 2.15,
+                                          child: ClipRRect(
+                                            borderRadius:
+                                            BorderRadius.vertical(
+                                                top: Radius.circular(10)),
+                                            child: CachedNetworkImage(
+                                              imageUrl: "${AppConstants.BASE_URL}/storage/app/public/self/survey.png",
+                                              imageBuilder: (context, imageProvider) => Container(
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: imageProvider,
+                                                      fit: BoxFit.cover,
+                                                      colorFilter:
+                                                      ColorFilter.mode(Colors.red, BlendMode.colorBurn)),
+                                                ),
+                                              ),
+                                            )
+                                          ),
+                                        ),
+                                        Spacer(),
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            color: ColorResources.getTextBg(
+                                                context),
+                                            borderRadius: BorderRadius.only(
+                                                bottomLeft:
+                                                Radius.circular(10),
+                                                bottomRight:
+                                                Radius.circular(10)),
+                                          ),
+                                          child: Center(
+                                            child: Padding(
+                                              padding: const EdgeInsets
+                                                  .symmetric(
+                                                  horizontal: Dimensions
+                                                      .PADDING_SIZE_EXTRA_SMALL),
+                                              child: Text(
+                                                getTranslated(
+                                                    'theft_reporting',
+                                                    context),
+                                                textAlign: TextAlign.center,
+                                                maxLines: 1,
+                                                overflow:
+                                                TextOverflow.ellipsis,
+                                                style: titilliumSemiBold
+                                                    .copyWith(
+                                                    fontSize: Dimensions
+                                                        .FONT_SIZE_LARGE),
                                               ),
                                             ),
                                           ),
                                         ),
-                                        Expanded(
-                                            flex: 3,
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                color: ColorResources.getTextBg(
-                                                    context),
-                                                borderRadius: BorderRadius.only(
-                                                    bottomLeft:
-                                                    Radius.circular(10),
-                                                    bottomRight:
-                                                    Radius.circular(10)),
-                                              ),
-                                              child: Center(
-                                                child: Padding(
-                                                  padding: const EdgeInsets
-                                                      .symmetric(
-                                                      horizontal: Dimensions
-                                                          .PADDING_SIZE_EXTRA_SMALL),
-                                                  child: Text(
-                                                    getTranslated(
-                                                        'theft_reporting',
-                                                        context),
-                                                    textAlign: TextAlign.center,
-                                                    maxLines: 1,
-                                                    overflow:
-                                                    TextOverflow.ellipsis,
-                                                    style: titilliumSemiBold
-                                                        .copyWith(
-                                                        fontSize: Dimensions
-                                                            .FONT_SIZE_LARGE),
-                                                  ),
-                                                ),
-                                              ),
-                                            )),
+                                        Spacer()
                                       ]),
                                 ),
                               ),
                             ),
                           ],
                         ),
-                        // Mega Deal
-                        /*Consumer<FlashDealProvider>(
-                          builder: (context, flashDeal, child) {
-                            return flashDeal.flashDeal == null
-                                ? Padding(
-                              padding: EdgeInsets.fromLTRB(
-                                  Dimensions.PADDING_SIZE_DEFAULT,
-                                  Dimensions.PADDING_SIZE_DEFAULT,
-                                  Dimensions.PADDING_SIZE_DEFAULT,
-                                  Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                              child: TitleRow(
-                                  title: getTranslated(
-                                      'flash_deal', context),
-                                  eventDuration:
-                                  flashDeal.flashDeal != null
-                                      ? flashDeal.duration
-                                      : null,
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (_) =>
-                                                FlashDealScreen()));
-                                  }),
-                            )
-                                : (flashDeal.flashDeal.id != null &&
-                                flashDeal.flashDealList != null &&
-                                flashDeal.flashDealList.length > 0)
-                                ? Padding(
-                              padding: EdgeInsets.fromLTRB(
-                                  Dimensions.PADDING_SIZE_DEFAULT,
-                                  Dimensions.PADDING_SIZE_DEFAULT,
-                                  Dimensions.PADDING_SIZE_DEFAULT,
-                                  Dimensions
-                                      .PADDING_SIZE_EXTRA_SMALL),
-                              child: TitleRow(
-                                  title: getTranslated(
-                                      'flash_deal', context),
-                                  eventDuration:
-                                  flashDeal.flashDeal != null
-                                      ? flashDeal.duration
-                                      : null,
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (_) =>
-                                                FlashDealScreen()));
-                                  }),
-                            )
-                                : SizedBox.shrink();
-                          },
-                        ),
-
-                        Consumer<FlashDealProvider>(
-                          builder: (context, megaDeal, child) {
-                            return megaDeal.flashDeal == null
-                                ? Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal:
-                                  Dimensions.PADDING_SIZE_SMALL),
-                              child: Container(
-                                  height: 150, child: FlashDealsView()),
-                            )
-                                : (megaDeal.flashDeal.id != null &&
-                                megaDeal.flashDealList != null &&
-                                megaDeal.flashDealList.length > 0)
-                                ? Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal:
-                                  Dimensions.PADDING_SIZE_SMALL),
-                              child: Container(
-                                  height: 150,
-                                  child: FlashDealsView()),
-                            )
-                                : SizedBox.shrink();
-                          },
-                        ),*/
-
-                        // Brand
-                        // comment start
-                        // Padding(
-                        //   padding: EdgeInsets.fromLTRB(
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                        //   child: TitleRow(
-                        //       title: getTranslated('brand', context),
-                        //       onTap: () {
-                        //         Navigator.push(
-                        //             context,
-                        //             MaterialPageRoute(
-                        //                 builder: (_) => AllBrandScreen()));
-                        //       }),
-                        // ),
-                        // Padding(
-                        //   padding: EdgeInsets.symmetric(
-                        //       horizontal: Dimensions.PADDING_SIZE_SMALL),
-                        //   child: BrandView(isHomePage: true),
-                        // ),
-
-                        // Featured Products
-                        // Padding(
-                        //   padding: EdgeInsets.fromLTRB(
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                        //   child: TitleRow(
-                        //       title:
-                        //           getTranslated('featured_products', context),
-                        //       onTap: () {
-                        //         Navigator.push(
-                        //             context,
-                        //             MaterialPageRoute(
-                        //                 builder: (_) => AllProductScreen(
-                        //                     productType:
-                        //                         ProductType.FEATURED_PRODUCT)));
-                        //       }),
-                        // ),
-                        // Padding(
-                        //   padding: EdgeInsets.symmetric(
-                        //       horizontal: Dimensions.PADDING_SIZE_SMALL),
-                        //   child: FeaturedProductView(
-                        //     scrollController: _scrollController,
-                        //     isHome: true,
-                        //   ),
-                        // ),
-                        // Featured Deal
-                        // Consumer<FeaturedDealProvider>(
-                        //   builder: (context, featuredDealProvider, child) {
-                        //     return featuredDealProvider.featuredDealList == null
-                        //         ? Padding(
-                        //             padding: EdgeInsets.fromLTRB(
-                        //                 Dimensions.PADDING_SIZE_DEFAULT,
-                        //                 Dimensions.PADDING_SIZE_DEFAULT,
-                        //                 Dimensions.PADDING_SIZE_DEFAULT,
-                        //                 Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                        //             child: TitleRow(
-                        //                 title: getTranslated(
-                        //                     'featured_deals', context),
-                        //                 onTap: () {
-                        //                   Navigator.push(
-                        //                       context,
-                        //                       MaterialPageRoute(
-                        //                           builder: (_) =>
-                        //                               FeaturedDealScreen()));
-                        //                 }),
-                        //           )
-                        //         : (featuredDealProvider.featuredDealList !=
-                        //                     null &&
-                        //                 featuredDealProvider
-                        //                         .featuredDealList.length >
-                        //                     0)
-                        //             ? Padding(
-                        //                 padding: EdgeInsets.fromLTRB(
-                        //                     Dimensions.PADDING_SIZE_DEFAULT,
-                        //                     Dimensions.PADDING_SIZE_DEFAULT,
-                        //                     Dimensions.PADDING_SIZE_DEFAULT,
-                        //                     Dimensions
-                        //                         .PADDING_SIZE_EXTRA_SMALL),
-                        //                 child: TitleRow(
-                        //                     title: getTranslated(
-                        //                         'featured_deals', context),
-                        //                     onTap: () {
-                        //                       Navigator.push(
-                        //                           context,
-                        //                           MaterialPageRoute(
-                        //                               builder: (_) =>
-                        //                                   FeaturedDealScreen()));
-                        //                     }),
-                        //               )
-                        //             : SizedBox.shrink();
-                        //   },
-                        // ),
-                        // Consumer<FeaturedDealProvider>(
-                        //   builder: (context, featuredDeal, child) {
-                        //     return featuredDeal.featuredDealList == null
-                        //         ? Padding(
-                        //             padding: EdgeInsets.symmetric(
-                        //                 horizontal:
-                        //                     Dimensions.PADDING_SIZE_SMALL),
-                        //             child: Container(
-                        //                 height: 150,
-                        //                 child: FeaturedDealsView()),
-                        //           )
-                        //         : (featuredDeal.featuredDealList != null &&
-                        //                 featuredDeal.featuredDealList.length >
-                        //                     0)
-                        //             ? Padding(
-                        //                 padding: EdgeInsets.symmetric(
-                        //                     horizontal:
-                        //                         Dimensions.PADDING_SIZE_SMALL),
-                        //                 child: Container(
-                        //                     height: 150,
-                        //                     child: FeaturedDealsView()),
-                        //               )
-                        //             : SizedBox.shrink();
-                        //   },
-                        // ),
-                        // comment end
-                        //top seller
                         singleVendor
                             ? SizedBox()
                             : Padding(
@@ -620,7 +341,7 @@ class _HomePageState extends State<HomePage> {
                               Dimensions.PADDING_SIZE_DEFAULT,
                               Dimensions.PADDING_SIZE_DEFAULT,
                               Dimensions.PADDING_SIZE_DEFAULT,
-                              Dimensions.PADDING_SIZE_EXTRA_SMALL),
+                              Dimensions.PADDING_SIZE_DEFAULT),
                           child: TitleRow(
                             title: getTranslated('top_seller', context),
                             onTap: () {
@@ -640,170 +361,6 @@ class _HomePageState extends State<HomePage> {
                               horizontal: Dimensions.PADDING_SIZE_SMALL),
                           child: TopSellerView(isHomePage: false),
                         ),
-
-                        // Latest Products
-                        // comment start
-                        // Padding(
-                        //   padding: EdgeInsets.fromLTRB(
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                        //   child: TitleRow(
-                        //       title: getTranslated('latest_products', context),
-                        //       onTap: () {
-                        //         Navigator.push(
-                        //             context,
-                        //             MaterialPageRoute(
-                        //                 builder: (_) => AllProductScreen(
-                        //                     productType:
-                        //                         ProductType.LATEST_PRODUCT)));
-                        //       }),
-                        // ),
-                        // Padding(
-                        //   padding: EdgeInsets.symmetric(
-                        //       horizontal: Dimensions.PADDING_SIZE_SMALL),
-                        //   child: LatestProductView(
-                        //       scrollController: _scrollController),
-                        // ),
-
-                        //Home category
-
-                        // Padding(
-                        //   padding: EdgeInsets.fromLTRB(
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                        //   child: HomeCategoryProductView(isHomePage: true),
-                        // ),
-
-                        //Category filter
-
-                        // Padding(
-                        //   padding: EdgeInsets.fromLTRB(
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_DEFAULT,
-                        //       Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                        //   child: Consumer<ProductProvider>(
-                        //       builder: (ctx, prodProvider, child) {
-                        //     return Row(children: [
-                        //       Expanded(
-                        //           child: Padding(
-                        //         padding: const EdgeInsets.only(
-                        //             right: Dimensions.PADDING_SIZE_DEFAULT),
-                        //         child: Text(
-                        //             prodProvider.title == 'xyz'
-                        //                 ? getTranslated('new_arrival', context)
-                        //                 : prodProvider.title,
-                        //             style: titleRegular),
-                        //       )),
-                        //       prodProvider.latestProductList != null
-                        //           ? PopupMenuButton(
-                        //               itemBuilder: (context) {
-                        //                 return [
-                        //                   PopupMenuItem(
-                        //                       value: ProductType.NEW_ARRIVAL,
-                        //                       child: Text(getTranslated(
-                        //                           'new_arrival', context)),
-                        //                       textStyle: robotoRegular.copyWith(
-                        //                         color:
-                        //                             Theme.of(context).hintColor,
-                        //                       )),
-                        //                   PopupMenuItem(
-                        //                       value: ProductType.TOP_PRODUCT,
-                        //                       child: Text(getTranslated(
-                        //                           'top_product', context)),
-                        //                       textStyle: robotoRegular.copyWith(
-                        //                         color:
-                        //                             Theme.of(context).hintColor,
-                        //                       )),
-                        //                   PopupMenuItem(
-                        //                       value: ProductType.BEST_SELLING,
-                        //                       child: Text(getTranslated(
-                        //                           'best_selling', context)),
-                        //                       textStyle: robotoRegular.copyWith(
-                        //                         color:
-                        //                             Theme.of(context).hintColor,
-                        //                       )),
-                        //                   PopupMenuItem(
-                        //                       value: ProductType
-                        //                           .DISCOUNTED_PRODUCT,
-                        //                       child: Text(getTranslated(
-                        //                           'discounted_product',
-                        //                           context)),
-                        //                       textStyle: robotoRegular.copyWith(
-                        //                         color:
-                        //                             Theme.of(context).hintColor,
-                        //                       )),
-                        //                 ];
-                        //               },
-                        //               shape: RoundedRectangleBorder(
-                        //                   borderRadius: BorderRadius.circular(
-                        //                       Dimensions.PADDING_SIZE_SMALL)),
-                        //               child: Padding(
-                        //                 padding: EdgeInsets.symmetric(
-                        //                     horizontal:
-                        //                         Dimensions.PADDING_SIZE_SMALL),
-                        //                 child: Icon(Icons.filter_list),
-                        //               ),
-                        //               onSelected: (value) {
-                        //                 if (value == ProductType.NEW_ARRIVAL) {
-                        //                   Provider.of<ProductProvider>(context,
-                        //                           listen: false)
-                        //                       .changeTypeOfProduct(
-                        //                           value, types[0]);
-                        //                 } else if (value ==
-                        //                     ProductType.TOP_PRODUCT) {
-                        //                   Provider.of<ProductProvider>(context,
-                        //                           listen: false)
-                        //                       .changeTypeOfProduct(
-                        //                           value, types[1]);
-                        //                 } else if (value ==
-                        //                     ProductType.BEST_SELLING) {
-                        //                   Provider.of<ProductProvider>(context,
-                        //                           listen: false)
-                        //                       .changeTypeOfProduct(
-                        //                           value, types[2]);
-                        //                 } else if (value ==
-                        //                     ProductType.DISCOUNTED_PRODUCT) {
-                        //                   Provider.of<ProductProvider>(context,
-                        //                           listen: false)
-                        //                       .changeTypeOfProduct(
-                        //                           value, types[3]);
-                        //                 }
-
-                        //                 Padding(
-                        //                   padding: EdgeInsets.symmetric(
-                        //                       horizontal: Dimensions
-                        //                           .PADDING_SIZE_SMALL),
-                        //                   child: ProductView(
-                        //                       isHomePage: false,
-                        //                       productType: value,
-                        //                       scrollController:
-                        //                           _scrollController),
-                        //                 );
-                        //                 Provider.of<ProductProvider>(context,
-                        //                         listen: false)
-                        //                     .getLatestProductList(1, context,
-                        //                         reload: true);
-                        //               })
-                        //           : SizedBox(),
-                        //     ]);
-                        //   }),
-                        // ),
-
-                        // Padding(
-                        //   padding: EdgeInsets.symmetric(
-                        //       horizontal: Dimensions.PADDING_SIZE_SMALL),
-                        //   child: ProductView(
-                        //       isHomePage: false,
-                        //       productType: ProductType.NEW_ARRIVAL,
-                        //       scrollController: _scrollController),
-                        // ),
-
-                        // comment end
                       ],
                     ),
                   )

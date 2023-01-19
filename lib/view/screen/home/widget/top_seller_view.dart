@@ -45,6 +45,7 @@ class TopSellerView extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(Dimensions.PADDING_SIZE_EXTRA_LARGE)),
                           color: Theme.of(context).highlightColor,
+                          border: Border.all(color: Colors.grey.shade400),
                           boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.15), blurRadius: 5, spreadRadius: 1)]
                       ),
 

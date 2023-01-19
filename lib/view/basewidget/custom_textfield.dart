@@ -43,11 +43,11 @@ Widget customTextField({
       style: TextStyle(color: Colors.black),
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(6),
           borderSide: BorderSide(color: Colors.blue),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(6),
           borderSide: BorderSide(
             color: Colors.blue,
           ),
@@ -59,7 +59,7 @@ Widget customTextField({
         hintStyle: TextStyle(color: Colors.blue),
         counterStyle: TextStyle(color: Colors.blue),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(6),
         ),
       ),
     ),

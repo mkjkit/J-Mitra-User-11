@@ -376,7 +376,6 @@ class _MoreScreenState extends State<MoreScreen> {
                             fontSize: Dimensions.FONT_SIZE_LARGE)),
                     trailing: Text(AppConstants.APP_VERSION),
                   ),
-
                   isGuestMode
                       ? SizedBox()
                       : ListTile(

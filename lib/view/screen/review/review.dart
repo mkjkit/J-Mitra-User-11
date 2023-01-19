@@ -21,6 +21,7 @@ class _ReviewListState extends State<ReviewList> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text(getTranslated('theft_reporting', context)),
@@ -62,21 +63,22 @@ class _ReviewListState extends State<ReviewList> {
                   );
                 },
                 child: Container(
-                  margin: EdgeInsets.all(7),
-                  padding: EdgeInsets.all(7),
+                  margin: EdgeInsets.all(12),
+                  padding: EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(0.3),
-                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: Colors.grey.shade400),
+                    color: Colors.pink.shade50,
+                    borderRadius: BorderRadius.circular(12),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
                         height: 60,
                         width: 60,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius: BorderRadius.circular(12),
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: NetworkImage(
@@ -89,11 +91,88 @@ class _ReviewListState extends State<ReviewList> {
                         ),
                       ),
                       SizedBox(
-                        width: 10,
+                        width: 16,
                       ),
+                      // Text(reviewProvider.reviews[index].survey ?? '')
                       Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(reviewProvider.reviews[index].survey ?? '')
+                          Row(
+                            children: [
+                              Text(
+                                'Shop Name : ',
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
+                              Container(
+                                width: size.width / 2.3,
+                                child: Text(
+                                    reviewProvider.reviews[index].userName ??
+                                        '',
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w400)),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                'District : ',
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                  reviewProvider.reviews[index].district ??
+                                      '',
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w400)),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                'State : ',
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                  reviewProvider.reviews[index].state ?? '',
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w400)),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                'Description : ',
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
+                              Container(
+                                width: size.width / 2.1,
+                                child: Text(
+                                    reviewProvider
+                                                .reviews[index].survey.length >
+                                            50
+                                        ? reviewProvider.reviews[index].survey
+                                                .substring(0, 50) +
+                                            '...'
+                                        : reviewProvider.reviews[index].survey,
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 2,
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w400)),
+                              ),
+                            ],
+                          ),
                         ],
                       )
                     ],

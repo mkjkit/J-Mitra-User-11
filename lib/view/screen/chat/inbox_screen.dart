@@ -100,38 +100,46 @@ class InboxScreen extends StatelessWidget {
                   return chat.chatInfoModel != null ? chat.uniqueShopList.length != 0 ? ListView.builder(
                     //physics: BouncingScrollPhysics(),
                     itemCount: chat.uniqueShopList.length,
-                    padding: EdgeInsets.all(0),
+                    padding: EdgeInsets.only(top: 10),
                     itemBuilder: (context, index) {
                       return Column(
                         children: [
-                          ListTile(
-                            leading: ClipOval(
-                              child: Container(
-                                color: Theme.of(context).highlightColor,
-                                child: FadeInImage.assetNetwork(
-                                  placeholder: Images.placeholder, fit: BoxFit.cover, height: 50, width: 50,
-                                  image: '${Provider.of<SplashProvider>(context, listen: false).baseUrls.sellerImageUrl}'
-                                      '/${chat.uniqueShopList[index].sellerInfo != null ? chat.uniqueShopList[index].sellerInfo.image : ''}',
-                                  imageErrorBuilder: (c, o, s) => Image.asset(Images.placeholder, fit: BoxFit.cover, height: 50, width: 50),
+                          Card(
+                            color: Colors.pink.shade50,
+                            margin: EdgeInsets.symmetric(horizontal: 10),
+                            shape: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.grey.shade400),
+                              borderRadius: BorderRadius.circular(10)
+                            ),
+                            child: ListTile(
+                              leading: ClipOval(
+                                child: Container(
+                                  color: Theme.of(context).highlightColor,
+                                  child: FadeInImage.assetNetwork(
+                                    placeholder: Images.placeholder, fit: BoxFit.cover, height: 50, width: 50,
+                                    image: '${Provider.of<SplashProvider>(context, listen: false).baseUrls.sellerImageUrl}'
+                                        '/${chat.uniqueShopList[index].sellerInfo != null ? chat.uniqueShopList[index].sellerInfo.image : ''}',
+                                    imageErrorBuilder: (c, o, s) => Image.asset(Images.placeholder, fit: BoxFit.cover, height: 50, width: 50),
+                                  ),
                                 ),
                               ),
-                            ),
-                            title: Text(
-                              chat.uniqueShopList[index].shop.name ?? '',
-                              style: titilliumSemiBold,
-                            ),
-                            subtitle: Container(child: Text(chat.uniqueShopList[index].message,maxLines: 4,overflow: TextOverflow.ellipsis, style: titilliumRegular.copyWith(fontSize: Dimensions.FONT_SIZE_EXTRA_SMALL))),
-                            trailing: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                              Text(DateConverter.localDateToIsoStringAMPM(DateTime.parse(chat.uniqueShopList[index].createdAt)),
-                                  style: titilliumRegular.copyWith(fontSize: Dimensions.FONT_SIZE_EXTRA_SMALL)),
+                              title: Text(
+                                chat.uniqueShopList[index].shop.name ?? '',
+                                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
+                              subtitle: Container(child: Text(chat.uniqueShopList[index].message,maxLines: 4,overflow: TextOverflow.ellipsis, style: titilliumRegular.copyWith(fontSize: Dimensions.PADDING_SIZE_DEFAULT))),
+                              trailing: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                                Text(DateConverter.localDateToIsoStringAMPM(DateTime.parse(chat.uniqueShopList[index].createdAt)),
+                                    style: titilliumRegular.copyWith(fontSize: Dimensions.FONT_SIZE_SMALL)),
 
-                            ]),
-                            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) {
-                              //SellerModel sellerModel = Provider.of<ChatProvider>(context).uniqueShopList[index].sellerInfo;
-                              //sellerModel.seller.shop = Provider.of<ChatProvider>(context).uniqueShopList[index].shop;
-                              return ChatScreen(seller: null,shopId: chat.uniqueShopList[index].shopId,shopName : chat.uniqueShopList[index].shop.name,
-                                  image: chat.uniqueShopList[index].sellerInfo != null ? chat.uniqueShopList[index].sellerInfo.image : '');
-                            })),
+                              ]),
+                              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) {
+                                //SellerModel sellerModel = Provider.of<ChatProvider>(context).uniqueShopList[index].sellerInfo;
+                                //sellerModel.seller.shop = Provider.of<ChatProvider>(context).uniqueShopList[index].shop;
+                                return ChatScreen(seller: null,shopId: chat.uniqueShopList[index].shopId,shopName : chat.uniqueShopList[index].shop.name,
+                                    image: chat.uniqueShopList[index].sellerInfo != null ? chat.uniqueShopList[index].sellerInfo.image : '');
+                              })),
+                            ),
                           ),
                           Divider(height: 2, color: ColorResources.CHAT_ICON_COLOR),
                         ],
