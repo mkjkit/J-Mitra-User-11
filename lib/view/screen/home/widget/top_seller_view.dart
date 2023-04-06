@@ -28,9 +28,9 @@ class TopSellerView extends StatelessWidget {
             mainAxisSpacing: 15,
             crossAxisSpacing: 15,
           ),
-          itemCount: isHomePage && topSellerProvider.topSellerList.length > 6? 6: topSellerProvider.topSellerList.length,
+          itemCount: isHomePage ? topSellerProvider.topSellerList.length : topSellerProvider.topSellerList.take(15).length,
           shrinkWrap: true,
-          physics: isHomePage ? NeverScrollableScrollPhysics() : BouncingScrollPhysics(),
+          physics: isHomePage ? BouncingScrollPhysics() : NeverScrollableScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {
 
             return InkWell(

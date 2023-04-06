@@ -35,7 +35,7 @@ class AllTopSellerScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.all(Dimensions.PADDING_SIZE_SMALL),
-        child: TopSellerView(isHomePage: false),
+        child: TopSellerView(isHomePage: true),
       ),
     );
   }
