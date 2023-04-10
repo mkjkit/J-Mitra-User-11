@@ -187,22 +187,22 @@ class _HomePageState extends State<HomePage> {
                                           height: 100,
                                           width: size.width / 2.15,
                                           child: ClipRRect(
-                                              borderRadius:
-                                              BorderRadius.vertical(
-                                                  top: Radius.circular(10)),
-                                              child: CachedNetworkImage(
-                                                fit: BoxFit.contain,
-                                                imageUrl: "${AppConstants.BASE_URL}/storage/app/public/self/matrimonial.png",
-                                                imageBuilder: (context, imageProvider) => Container(
-                                                  decoration: BoxDecoration(
-                                                    image: DecorationImage(
-                                                        image: imageProvider,
-                                                        fit: BoxFit.cover,
-                                                        colorFilter:
-                                                        ColorFilter.mode(Colors.red, BlendMode.colorBurn)),
-                                                  ),
+                                            borderRadius:
+                                            BorderRadius.vertical(
+                                                top: Radius.circular(10)),
+                                            child: CachedNetworkImage(
+                                              fit: BoxFit.contain,
+                                              imageUrl: "${AppConstants.BASE_URL}/storage/app/public/self/matrimonial.png",
+                                              imageBuilder: (context, imageProvider) => Container(
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: imageProvider,
+                                                      fit: BoxFit.cover,
+                                                      colorFilter:
+                                                      ColorFilter.mode(Colors.red, BlendMode.colorBurn)),
                                                 ),
-                                              )
+                                              ),
+                                            )
                                           ),
                                         ),
                                         Spacer(),
@@ -277,21 +277,21 @@ class _HomePageState extends State<HomePage> {
                                           height: 100,
                                           width: size.width / 2.15,
                                           child: ClipRRect(
-                                              borderRadius:
-                                              BorderRadius.vertical(
-                                                  top: Radius.circular(10)),
-                                              child: CachedNetworkImage(
-                                                imageUrl: "${AppConstants.BASE_URL}/storage/app/public/self/survey.png",
-                                                imageBuilder: (context, imageProvider) => Container(
-                                                  decoration: BoxDecoration(
-                                                    image: DecorationImage(
-                                                        image: imageProvider,
-                                                        fit: BoxFit.cover,
-                                                        colorFilter:
-                                                        ColorFilter.mode(Colors.red, BlendMode.colorBurn)),
-                                                  ),
+                                            borderRadius:
+                                            BorderRadius.vertical(
+                                                top: Radius.circular(10)),
+                                            child: CachedNetworkImage(
+                                              imageUrl: "${AppConstants.BASE_URL}/storage/app/public/self/survey.png",
+                                              imageBuilder: (context, imageProvider) => Container(
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: imageProvider,
+                                                      fit: BoxFit.cover,
+                                                      colorFilter:
+                                                      ColorFilter.mode(Colors.red, BlendMode.colorBurn)),
                                                 ),
-                                              )
+                                              ),
+                                            )
                                           ),
                                         ),
                                         Spacer(),

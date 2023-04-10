@@ -20,6 +20,8 @@ class TopSellerView extends StatelessWidget {
     return Consumer<TopSellerProvider>(
       builder: (context, topSellerProvider, child) {
 
+        topSellerProvider.topSellerList.sort((a, b) => a.zone.compareTo(b.zone));
+
         return topSellerProvider.topSellerList != null ? topSellerProvider.topSellerList.length != 0 ?
         GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -38,33 +40,53 @@ class TopSellerView extends StatelessWidget {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => TopSellerProductScreen(topSeller: topSellerProvider.topSellerList[index])));
               },
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(Dimensions.PADDING_SIZE_EXTRA_LARGE)),
-                          color: Theme.of(context).highlightColor,
-                          border: Border.all(color: Colors.grey.shade400),
-                          boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.15), blurRadius: 5, spreadRadius: 1)]
-                      ),
-
-                      child: Padding(
-                        padding: EdgeInsets.all(Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                        child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(Dimensions.PADDING_SIZE_EXTRA_LARGE)),
-                          child: FadeInImage.assetNetwork(
-                          fit: BoxFit.cover,
-                          placeholder: Images.placeholder,
-                          image: Provider.of<SplashProvider>(context,listen: false).baseUrls.shopImageUrl+'/'+topSellerProvider.topSellerList[index].image,
-                          imageErrorBuilder: (c, o, s) => Image.asset(Images.placeholder_1x1, fit: BoxFit.cover,),
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(Dimensions.PADDING_SIZE_EXTRA_LARGE)),
+                            color: Theme.of(context).highlightColor,
+                            border: Border.all(color: Colors.grey.shade400),
+                            boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.15), blurRadius: 5, spreadRadius: 1)]
                         ),
-                      ),
 
-                    ),
-                  ),
-                  ),
-                ]),
+                        child: Padding(
+                          padding: EdgeInsets.all(Dimensions.PADDING_SIZE_EXTRA_SMALL),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.all(Radius.circular(Dimensions.PADDING_SIZE_EXTRA_LARGE)),
+                            child: Column(
+                                children: [
+                                  Expanded(
+                                    child: FadeInImage.assetNetwork(
+                                      fit: BoxFit.cover,
+                                      placeholder: Images.placeholder,
+                                      image: Provider.of<SplashProvider>(context,listen: false).baseUrls.shopImageUrl+'/'+topSellerProvider.topSellerList[index].image,
+                                      imageErrorBuilder: (c, o, s) => Image.asset(Images.placeholder_1x1, fit: BoxFit.cover,),
+                                    ),),
+                                  SizedBox(height: Dimensions.PADDING_SIZE_EXTRA_SMALL),
+                                  Text(
+                                    topSellerProvider.topSellerList[index].zone,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(fontSize: Dimensions.FONT_SIZE_SMALL, fontWeight: FontWeight.bold,),
+                                  ),
+                                  Text(
+                                    topSellerProvider.topSellerList[index].name.substring(0,5),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(fontSize: Dimensions.FONT_SIZE_SMALL),
+                                  ),
+                                ]
+
+                            ),
+
+                          ),
+                        ),
+                      ),),
+                  ]),
             );
 
           },

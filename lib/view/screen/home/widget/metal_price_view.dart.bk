@@ -1,0 +1,62 @@
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+class MetalPriceView extends StatefulWidget {
+  const MetalPriceView({Key? key}) : super(key: key);
+
+  @override
+  _MetalPriceViewState createState() => _MetalPriceViewState();
+}
+
+class _MetalPriceViewState extends State<MetalPriceView> {
+  final String apiUrl =
+      "https://api.metalpriceapi.com/v1/latest?api_key=31d59f2d04056b39067538f2b36acf03&base=USD&currencies=EUR,XAU,XAG";
+  late Map<String, dynamic> _data;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchData();
+  }
+
+  Future<void> _fetchData() async {
+    final response = await http.get(Uri.parse(apiUrl));
+    if (response.statusCode == 200) {
+      final responseData = json.decode(response.body);
+      setState(() {
+        _data = responseData;
+      });
+    } else {
+      throw Exception('Failed to load data');
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: _data == null
+          ? CircularProgressIndicator()
+          : Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            "Gold (XAU): ${_data['XAU']['USD']}",
+            style: TextStyle(fontSize: 20),
+          ),
+          SizedBox(height: 20),
+          Text(
+            "Silver (XAG): ${_data['XAG']['USD']}",
+            style: TextStyle(fontSize: 20),
+          ),
+          SizedBox(height: 20),
+          Text(
+            "Euro (EUR): ${_data['EUR']['USD']}",
+            style: TextStyle(fontSize: 20),
+          ),
+        ],
+      ),
+    );
+  }
+}
